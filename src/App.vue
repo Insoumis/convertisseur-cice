@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <c-header></c-header>
-    <c-sub-header></c-sub-header>
     <c-converter-header></c-converter-header>
     <c-job-chooser @addJob="addJob" @removeJob="removeJob"></c-job-chooser>
+    <div class="c-job-space"></div>
     <c-job-result :joblist="joblist" ref="result"></c-job-result>
   </div>
 </template>
@@ -64,7 +64,7 @@ body {
   margin: 0;
 }
 
-h1, h2 {
+h1, h2, h5 {
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
   font-weight: 600;
@@ -78,5 +78,9 @@ h1, h2 {
 
 .c--red {
   color: $red;
+}
+
+.c-job-space {
+  flex: 1;
 }
 </style>

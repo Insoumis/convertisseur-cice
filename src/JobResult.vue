@@ -1,5 +1,6 @@
 <template>
   <div class="c-job-result">
+    <c-sources></c-sources>
     <h2 class="c-job-result__title">
       <span v-if="jobs === 0">Le CICE a créé <span class="c--red">0</span> emplois</span>
       <span v-if="jobs !== 0">
@@ -41,8 +42,9 @@
 
 .c-job-result {
   display: flex;
-  flex: 1;
   flex-direction: column;
+  min-height: 320px;
+  position: relative;
 }
 
 .c-job-result__title {
@@ -76,8 +78,14 @@
 import { totalCICE } from './joblist'
 import cice from './cice'
 
+import CSources from './Sources.vue'
+
 export default {
   props: ['joblist'],
+
+  components: {
+    CSources
+  },
 
   data() {
     return {
