@@ -14,7 +14,7 @@
       </div>
       <div class="c-job-result__details__separator"></div>
       <div class="c-job-result__details__jobs">
-        <h3 class="c-job-result__details__jobs__title">Nombre d'emplois créés</h3>
+        <h3 class="c-job-result__details__jobs__title">Emplois</h3>
         <div v-for="job in details">{{ job.jobs }}</div>
       </div>
     </div>
@@ -25,7 +25,7 @@
       </div>
       <div class="c-job-result__details__separator"></div>
       <div class="c-job-result__details__jobs">
-        <h3 class="c-job-result__details__jobs__title">Nombre d'emplois :</h3>
+        <h3 class="c-job-result__details__jobs__title">Emplois</h3>
         <div v-for="company in cice">{{ company.jobs }}</div>
       </div>
       <div class="c-job-result__details__separator"></div>
