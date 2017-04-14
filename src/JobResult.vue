@@ -1,19 +1,19 @@
 <template>
   <div class="c-job-result">
     <h2 class="c-job-result__title">
-      <span v-if="jobs === 0">Le CICE n'a pas créé d'emplois</span>
+      <span v-if="jobs === 0">Le CICE a créé <span class="c--red">0</span> emplois</span>
       <span v-if="jobs !== 0">
         Le remplacement du CICE créera <span class="c--red">{{ jobs }}</span> emplois
       </span>
     </h2>
     <div class="c-job-result__details">
       <div class="c-job-result__details__names">
-        <h3>Poste</h3>
+        <h3 class="c-job-result__details__names__title">Poste</h3>
         <div v-for="job in details">{{ job.name }}</div>
       </div>
       <div class="c-job-result__details__separator"></div>
       <div class="c-job-result__details__jobs">
-        <h3>Nombre d'emplois créés</h3>
+        <h3 class="c-job-result__details__jobs__title">Nombre d'emplois créés</h3>
         <div v-for="job in details">{{ job.jobs }}</div>
       </div>
     </div>
@@ -49,6 +49,10 @@
   background-color: $white;
   margin: 0 20px;
   width: 1px;
+}
+
+.c-job-result__details__names__title, .c-job-result__details__jobs__title {
+  margin-top: 0;
 }
 </style>
 

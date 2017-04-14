@@ -41,8 +41,11 @@ module.exports = {
         }
       },
       {
-          test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-          loader: 'file-loader'
+        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+        loader: 'file-loader',
+        query: {
+          useRelativePath: process.env.NODE_ENV === 'production'
+        }
       }
     ]
   },
