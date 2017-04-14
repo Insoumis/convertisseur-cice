@@ -6,7 +6,8 @@
         :class="itemClass(job)"
         @click="activeJob(index)"
         v-for="(job, index) in joblist">
-          {{ job.name }} — {{ job.costPerMonth }} € <span class="c-job-chooser__list__item__month">mensuels</span>
+          {{ job.name }} — {{ job.costPerMonth }}€&nbsp;
+          <span class="c-job-chooser__list__item__month">mensuels</span>
         </div>
     </div>
   </div>
@@ -23,7 +24,7 @@
   flex-direction: column;
   height: 320px;
   margin: 0 auto;
-  width: 500px;
+  width: 490px;
 }
 
 .c-job-chooser__title {
@@ -52,8 +53,7 @@
   }
 
   &:hover {
-    color: #fff;
-    background-color: darken($flashyBlue, 5%);
+    text-decoration: underline;
   }
 
   &.c-job-chooser__list__item--activated {
@@ -73,11 +73,6 @@
 
   .c-job-chooser__list__item {
     font-size: 14px;
-
-    &:hover {
-      color: inherit;
-      background: inherit;
-    }
   }
 
   .c-job-chooser__list__item__month {
@@ -87,7 +82,7 @@
 </style>
 
 <script>
-import joblist from './joblist.js';
+import joblist from './joblist.js'
 
 export default {
   data() {

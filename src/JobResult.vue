@@ -4,7 +4,7 @@
     <h2 class="c-job-result__title">
       <span v-if="jobs === 0">Le CICE a créé <span class="c--red">0</span> emplois</span>
       <span v-if="jobs !== 0">
-        Le remplacement du CICE créera <span class="c--red">{{ jobs }}</span> emplois
+        Le remplacement du CICE créera <span class="c--red">{{ jobs | bigNumber }}</span> emplois
       </span>
     </h2>
     <div class="c-job-result__details" v-if="jobs !== 0">
@@ -50,6 +50,10 @@
 .c-job-result__title {
   margin: 30px 0;
   text-align: center;
+
+  .c--red {
+    font-size: 140%;
+  }
 }
 
 .c-job-result__details {
@@ -130,13 +134,15 @@ export default {
     calcJobs() {
       const jobs = this.joblist.filter(job => job.active)
 
-      const perJob = totalCICE / jobs.length
+      const totalCoef = jobs.map(job => job.coef).reduce((a, b) => a + b, 0)
+
+      const perJob = totalCICE / totalCoef
 
       this.details = jobs.map(job => {
         return {
           name        : job.name,
           costPerMonth: job.costPerMonth,
-          jobs        : Math.floor(perJob / (job.costPerMonth * 1.3 * 12))
+          jobs        : Math.floor((perJob * job.coef) / (job.costPerMonth * 1.3 * 12))
         }
       })
 

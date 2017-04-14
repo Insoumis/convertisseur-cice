@@ -1,8 +1,9 @@
 <template>
-  <div id="app">
+  <div id="app" @mousemove="mousemove($event)" @mouseup="mouseup()">
     <c-header></c-header>
     <c-converter-header></c-converter-header>
     <c-job-chooser @addJob="addJob" @removeJob="removeJob"></c-job-chooser>
+    <c-jauges :joblist="joblist" ref="jauges" @setJobCoef="setJobCoef"></c-jauges>
     <div class="c-job-space"></div>
     <c-job-result :joblist="joblist" ref="result"></c-job-result>
   </div>
@@ -16,6 +17,7 @@ import CSubHeader from './SubHeader.vue'
 import CConverterHeader from './ConverterHeader.vue'
 import CJobChooser from './JobChooser.vue'
 import CJobResult from './JobResult.vue'
+import CJauges from './Jauges.vue'
 
 export default {
   name: 'app',
@@ -25,7 +27,8 @@ export default {
     CSubHeader,
     CConverterHeader,
     CJobChooser,
-    CJobResult
+    CJobResult,
+    CJauges
   },
 
   data() {
@@ -41,6 +44,19 @@ export default {
     removeJob(index) {
       this.joblist[index].active = false
       this.$refs.result.calcJobs()
+    },
+
+    setJobCoef(index, coef) {
+      this.joblist[index].coef = coef
+      this.$refs.result.calcJobs()
+    },
+
+    mousemove(event) {
+      this.$refs.jauges.mousemove(event)
+    },
+
+    mouseup() {
+      this.$refs.jauges.mouseup()
     }
   }
 }
