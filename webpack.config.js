@@ -36,15 +36,16 @@ module.exports = {
       {
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'file-loader',
-        options: {
-          name: '[name].[ext]?[hash]'
+        query: {
+          name: '[name].[ext]?[hash]',
+          publicPath: process.env.NODE_ENV === 'production' ? './dist/' : '/dist/'
         }
       },
       {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
         loader: 'file-loader',
         query: {
-          useRelativePath: process.env.NODE_ENV === 'production'
+          publicPath: process.env.NODE_ENV === 'production' ? './dist/' : '/dist/'
         }
       }
     ]
