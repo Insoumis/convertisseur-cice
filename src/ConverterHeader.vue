@@ -20,4 +20,10 @@
   line-height: 54px;
   text-align: center;
 }
+
+@media (max-width: 500px) {
+  .c-converter-header__title {
+    font-size: 22px;
+  }
+}
 </style>

@@ -5,7 +5,9 @@
       <div
         :class="itemClass(job)"
         @click="activeJob(index)"
-        v-for="(job, index) in joblist">{{ job.name }} — {{ job.costPerMonth }} € mensuels</div>
+        v-for="(job, index) in joblist">
+          {{ job.name }} — {{ job.costPerMonth }} € <span class="c-job-chooser__list__item__month">mensuels</span>
+        </div>
     </div>
   </div>
 </template>
@@ -57,6 +59,29 @@
   &.c-job-chooser__list__item--activated {
     color: #fff;
     background-color: $flashyBlue;
+  }
+}
+
+@media (max-width: 500px) {
+  .c-job-chooser {
+    width: 90%;
+  }
+
+  .c-job-chooser__title {
+    font-size: 15px;
+  }
+
+  .c-job-chooser__list__item {
+    font-size: 14px;
+
+    &:hover {
+      color: inherit;
+      background: inherit;
+    }
+  }
+
+  .c-job-chooser__list__item__month {
+    display: none;
   }
 }
 </style>

@@ -29,4 +29,16 @@
   font-family: 'Roboto Slab', sans-serif;
   text-align: right;
 }
+
+@media(max-width: 500px) {
+  .c-sources {
+    opacity: 0.6;
+    right: 10px;
+    top: 70px;
+  }
+
+  .c-sources__title, .c-sources__link {
+    font-size: 12px;
+  }
+}
 </style>
