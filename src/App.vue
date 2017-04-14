@@ -43,6 +43,7 @@ export default {
 
     removeJob(index) {
       this.joblist[index].active = false
+      this.joblist[index].progress.value = 0
       this.triggerUpdate()
     },
 

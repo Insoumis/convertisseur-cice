@@ -53,11 +53,11 @@ export default {
   methods: {
     update(joblist) {
       this.joblist = joblist
+
+      this.refreshProgressbars()
     },
 
-    updateValue($event, updatedIndex) {
-      this.joblist[updatedIndex].progress.value = parseInt($event.target.value, 10)
-
+    refreshProgressbars() {
       this.joblist.forEach((job, index) => {
         const jobMax = totalCICE - this.joblist
           .filter((_, j) => j !== index)
@@ -68,6 +68,12 @@ export default {
 
         return job
       })
+    },
+
+    updateValue($event, updatedIndex) {
+      this.joblist[updatedIndex].progress.value = parseInt($event.target.value, 10)
+
+      this.refreshProgressbars()
 
       this.$emit('updateJobs')
     }
