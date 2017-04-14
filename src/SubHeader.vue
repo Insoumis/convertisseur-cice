@@ -15,7 +15,7 @@
 
 .c-sub-header__link {
   align-items: center;
-  color: #fff;
+  color: $white;
   display: inline-flex;
   font-family: 'Roboto Slab', sans-serif;
   height: 100%;
