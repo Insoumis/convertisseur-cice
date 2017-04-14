@@ -9,7 +9,6 @@
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
-    "lodash.throttle": "^4.1.1",
     "normalize.css": "^6.0.0",
     "typeface-montserrat": "^0.0.24",
     "typeface-roboto-slab": "^0.0.22",

@@ -18,6 +18,10 @@ Vue.filter('bigNumber', (jobs) => {
   return chunks.reverse().join(' ')
 })
 
+Vue.filter('billions', (number) => {
+  return (number / 10e8).toFixed(2)
+});
+
 new Vue({
   el: '#app',
   render: h => h(App)

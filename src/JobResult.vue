@@ -106,7 +106,6 @@
 </style>
 
 <script>
-import { totalCICE } from './joblist'
 import cice from './cice'
 
 import CSources from './Sources.vue'
@@ -127,22 +126,20 @@ export default {
   },
 
   mounted() {
-    this.calcJobs()
+    this.update()
   },
 
   methods: {
-    calcJobs() {
+    update(joblist) {
+      this.joblist = this.joblist
+
       const jobs = this.joblist.filter(job => job.active)
-
-      const totalCoef = jobs.map(job => job.coef).reduce((a, b) => a + b, 0)
-
-      const perJob = totalCICE / totalCoef
 
       this.details = jobs.map(job => {
         return {
           name        : job.name,
           costPerMonth: job.costPerMonth,
-          jobs        : Math.floor((perJob * job.coef) / (job.costPerMonth * 1.3 * 12))
+          jobs        : Math.floor(job.progress.value / (job.costPerMonth * 1.3 * 12))
         }
       })
 

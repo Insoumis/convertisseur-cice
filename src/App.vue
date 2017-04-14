@@ -1,9 +1,9 @@
 <template>
-  <div id="app" @mousemove="mousemove($event)" @mouseup="mouseup()">
+  <div id="app">
     <c-header></c-header>
     <c-converter-header></c-converter-header>
     <c-job-chooser @addJob="addJob" @removeJob="removeJob"></c-job-chooser>
-    <c-jauges :joblist="joblist" ref="jauges" @setJobCoef="setJobCoef"></c-jauges>
+    <c-jauges :joblist="joblist" ref="jauges" @updateJobs="triggerUpdate"></c-jauges>
     <div class="c-job-space"></div>
     <c-job-result :joblist="joblist" ref="result"></c-job-result>
   </div>
@@ -38,25 +38,17 @@ export default {
   methods: {
     addJob(index) {
       this.joblist[index].active = true
-      this.$refs.result.calcJobs()
+      this.triggerUpdate()
     },
 
     removeJob(index) {
       this.joblist[index].active = false
-      this.$refs.result.calcJobs()
+      this.triggerUpdate()
     },
 
-    setJobCoef(index, coef) {
-      this.joblist[index].coef = coef
-      this.$refs.result.calcJobs()
-    },
-
-    mousemove(event) {
-      this.$refs.jauges.mousemove(event)
-    },
-
-    mouseup() {
-      this.$refs.jauges.mouseup()
+    triggerUpdate(index) {
+      this.$refs.result.update(this.joblist)
+      this.$refs.jauges.update(this.joblist)
     }
   }
 }
