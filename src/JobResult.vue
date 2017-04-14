@@ -6,7 +6,7 @@
         Le remplacement du CICE créera <span class="c--red">{{ jobs }}</span> emplois
       </span>
     </h2>
-    <div class="c-job-result__details">
+    <div class="c-job-result__details" v-if="jobs !== 0">
       <div class="c-job-result__details__names">
         <h3 class="c-job-result__details__names__title">Poste</h3>
         <div v-for="job in details">{{ job.name }}</div>
@@ -15,6 +15,22 @@
       <div class="c-job-result__details__jobs">
         <h3 class="c-job-result__details__jobs__title">Nombre d'emplois créés</h3>
         <div v-for="job in details">{{ job.jobs }}</div>
+      </div>
+    </div>
+    <div class="c-job-result__details" v-if="jobs === 0">
+      <div class="c-job-result__details__names">
+        <h3 class="c-job-result__details__names__title">Entreprise</h3>
+        <div v-for="company in cice">{{ company.name }}</div>
+      </div>
+      <div class="c-job-result__details__separator"></div>
+      <div class="c-job-result__details__jobs">
+        <h3 class="c-job-result__details__jobs__title">Nombre d'emplois :</h3>
+        <div v-for="company in cice">{{ company.jobs }}</div>
+      </div>
+      <div class="c-job-result__details__separator"></div>
+      <div class="c-job-result__details__jobs">
+        <h3 class="c-job-result__details__jobs__title">CICE touché</h3>
+        <div v-for="company in cice">{{ company.cice / 10e6 }} millions</div>
       </div>
     </div>
   </div>
@@ -58,12 +74,14 @@
 
 <script>
 import { totalCICE } from './joblist'
+import cice from './cice'
 
 export default {
   props: ['joblist'],
 
   data() {
     return {
+      cice,
       details: [],
       jobs: 0
     }

@@ -1,5 +1,5 @@
 const jobs = [
-  { name: 'Infirmiers', costPerMonth: 2100, active: true },
+  { name: 'Infirmiers', costPerMonth: 2100, active: false },
   { name: 'Instituteur', costPerMonth: 2150, active: false },
   { name: 'Animateur périscolaire', costPerMonth: 820, active: false },
   { name: 'Policier municipal', costPerMonth: 1800, active: false },
@@ -9,8 +9,8 @@ const jobs = [
   { name: 'Cheminot', costPerMonth: 3090, active: false },
   { name: 'Inspecteur du travail', costPerMonth: 2875, active: false },
   { name: 'Contrôleur des impôts', costPerMonth: 2100, active : false }
-];
+]
 
-export default jobs;
+export default jobs
 
-export const totalCICE = 2.2 * 10e9;
+export const totalCICE = 2.2 * 10e9
