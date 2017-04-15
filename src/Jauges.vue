@@ -50,7 +50,9 @@
   }
 
   .c-jauges__jauge {
+    min-width: 0;
     text-align: center;
+    width: 100%;
   }
 
   .c-jauges__jauge__title {
