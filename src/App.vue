@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <c-header></c-header>
+    <c-cice-jauge :joblist="joblist" ref="ciceJauge"></c-cice-jauge>
     <c-converter-header></c-converter-header>
     <c-job-chooser @addJob="addJob" @removeJob="removeJob"></c-job-chooser>
     <c-jauges :joblist="joblist" ref="jauges" @updateJobs="triggerUpdate"></c-jauges>
@@ -13,7 +14,7 @@
 import joblist from './joblist'
 
 import CHeader from './Header.vue'
-import CSubHeader from './SubHeader.vue'
+import CCICEJauge from './CICEJauge.vue'
 import CConverterHeader from './ConverterHeader.vue'
 import CJobChooser from './JobChooser.vue'
 import CJobResult from './JobResult.vue'
@@ -24,7 +25,7 @@ export default {
 
   components: {
     CHeader,
-    CSubHeader,
+    'c-cice-jauge': CCICEJauge,
     CConverterHeader,
     CJobChooser,
     CJobResult,
@@ -50,6 +51,7 @@ export default {
     triggerUpdate(index) {
       this.$refs.result.update(this.joblist)
       this.$refs.jauges.update(this.joblist)
+      this.$refs.ciceJauge.update(this.joblist)
     }
   }
 }
