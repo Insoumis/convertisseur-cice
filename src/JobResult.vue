@@ -53,11 +53,11 @@
 
 .c-job-result__title-wrapper {
   display: flex;
+  margin: 10px 0;
 }
 
 .c-job-result__title-wrapper__title {
   flex: 1;
-  margin: 10px 0 30px 0;
   padding: 0 10px;
   text-align: center;
 
@@ -97,7 +97,7 @@
     margin: 40px 0
   }
 
-  .c-job-result__title .c--red {
+  .c-job-result__title-wrapper__title .c--red {
     display: block;
   }
 
