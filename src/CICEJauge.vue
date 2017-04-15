@@ -1,6 +1,10 @@
 <template>
   <div class="c-cice-jauge">
-    CICE restant:  {{ cice | billions }} milliards
+    <div
+        class="c-cice-jauge__upper"
+        :style="percent">CICE restant: {{ cice | billions }} milliards</div>
+    <div
+      class="c-cice-jauge__layer">CICE restant: {{ cice | billions }} milliards</div>
   </div>
 </template>
 
@@ -9,14 +13,33 @@
 
 .c-cice-jauge {
   align-items: center;
-  background-color: $blue;
   color: #fff;
   display: flex;
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   height: 30px;
   margin: 2px;
-  padding: 0 10px;
+  position: relative;
+}
+
+.c-cice-jauge__layer, .c-cice-jauge__upper {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  background-color: $white;
+  color: $blue;
+  height: 30px;
+  text-indent: 10px;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.c-cice-jauge__upper {
+  background-color: $blue;
+  color: $white;
+  z-index: 1;
 }
 </style>
 
@@ -37,7 +60,16 @@ export default {
       return totalCICE - this.joblist
         .filter(job => job.active)
         .map(job => job.progress.value)
-        .reduce((a, b) => a + b, 0);
+        .reduce((a, b) => a + b, 0)
+    },
+
+    percent() {
+      return { width: `${this.cice / totalCICE * 100}%` }
+    },
+
+    text() {
+      const cice = this.$options.filters.billions(this.cice)
+      return ``
     }
   },
 
