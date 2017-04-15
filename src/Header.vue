@@ -1,5 +1,6 @@
 <template>
   <div class="c-header">
+    <a href="http://discord.insoumis.online/" class="c-header__discord">Discord</a>
     <img src="./assets/logo.png" height="60">
     <button class="c-header__cice" @click="toggleCICE">Le CICE</button>
 
@@ -24,7 +25,7 @@
   padding: 0 40px;
 }
 
-.c-header__cice {
+.c-header__cice, .c-header__discord {
   background-color: rgba(0, 0, 0, 0.15);
   border-radius: 3px;
   border: 1px solid rgba(255, 255, 255, 0.55);
@@ -36,6 +37,12 @@
   position: absolute;
   right: 10px;
   text-transform: uppercase;
+}
+
+.c-header__discord {
+  left: 10px;
+  right: initial;
+  text-decoration: none;
 }
 
 .c-header__cice-box {
