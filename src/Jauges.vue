@@ -7,7 +7,8 @@
         <input
           type="range"
           min="0"
-          :max="job.progress.max"
+          :max="totalCICE"
+          :data-max="job.progress.max"
           :value="job.progress.value"
           @input="updateValue($event, index)">
       </div>
@@ -72,6 +73,12 @@ import { totalCICE } from './joblist'
 export default {
   props: ['joblist'],
 
+  data() {
+    return {
+      totalCICE
+    }
+  },
+
   computed: {
     isShown() {
       return this.joblist.filter(job => job.active).length > 0
@@ -99,7 +106,12 @@ export default {
     },
 
     updateValue($event, updatedIndex) {
-      this.joblist[updatedIndex].progress.value = parseInt($event.target.value, 10)
+      let value = parseInt($event.target.value, 10)
+      value = Math.min(value, this.joblist[updatedIndex].progress.max)
+
+      $event.target.value = value
+
+      this.joblist[updatedIndex].progress.value = value
 
       this.refreshProgressbars()
 
