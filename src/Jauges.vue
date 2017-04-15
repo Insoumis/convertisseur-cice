@@ -1,6 +1,6 @@
 <template>
-  <div class="c-jauges">
-    <h2 class="c-jauges__title" v-if="joblist.length > 0">Définis tes prioritées !</h2>
+  <div class="c-jauges" v-if="isShown">
+    <h2 class="c-jauges__title">Définis tes prioritées !</h2>
     <div class="c-jauges__jauge" v-for="(job, index) in joblist">
       <div v-if="job.active">
         <h3 class="c-jauges__jauge__title">{{ job.plural }} : {{ job.progress.value | billions }} milliards</h3>
@@ -20,7 +20,7 @@
 @import './range';
 
 .c-jauges {
-  margin-bottom: 30px;
+  margin-bottom: 0;
 }
 
 .c-jauges__title {
@@ -31,6 +31,7 @@
 
 .c-jauges__jauge {
   margin: 40px auto 0 auto;
+  min-width: 450px;
   width: 50%;
 
   &:first-of-type {
@@ -42,6 +43,25 @@
   color: $red;
   font-family: 'Montserrat', sans-serif;
 }
+
+@media (max-width: 500px) {
+  .c-jauges__title {
+    font-size: 15px;
+  }
+
+  .c-jauges__jauge {
+    text-align: center;
+  }
+
+  .c-jauges__jauge__title {
+    font-size: 14px;
+  }
+
+  input[type=range] {
+    margin: 0 auto;
+    width: 80%;
+  }
+}
 </style>
 
 <script>
@@ -49,6 +69,12 @@ import { totalCICE } from './joblist'
 
 export default {
   props: ['joblist'],
+
+  computed: {
+    isShown() {
+      return this.joblist.filter(job => job.active).length > 0
+    }
+  },
 
   methods: {
     update(joblist) {

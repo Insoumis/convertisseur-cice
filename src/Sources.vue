@@ -13,9 +13,7 @@
 .c-sources {
   display: flex;
   flex-direction: column;
-  position: absolute;
-  right: 15px;
-  top: 0;
+  padding-right: 10px;
 }
 
 .c-sources__title {
@@ -33,8 +31,6 @@
 @media(max-width: 500px) {
   .c-sources {
     opacity: 0.6;
-    right: 10px;
-    top: 70px;
   }
 
   .c-sources__title, .c-sources__link {

@@ -1,12 +1,16 @@
 <template>
   <div class="c-job-result">
-    <c-sources></c-sources>
-    <h2 class="c-job-result__title">
-      <span v-if="jobs === 0">Le CICE a créé <span class="c--red">0</span> emplois</span>
-      <span v-if="jobs !== 0">
-        Le remplacement du CICE créera <span class="c--red">{{ jobs | bigNumber }}</span> emplois
-      </span>
-    </h2>
+    <div class="c-job-result__title-wrapper">
+      <h2 class="c-job-result__title-wrapper__title">
+        <span v-if="jobs === 0">Le CICE a créé <span class="c--red">0</span> emplois</span>
+        <span v-if="jobs !== 0">
+          Le remplacement du CICE créera
+          <span class="c--red" v-html="$options.filters.bigNumber(jobs)"></span>
+          emplois
+        </span>
+      </h2>
+      <c-sources></c-sources>
+    </div>
     <div class="c-job-result__details" v-if="jobs !== 0">
       <div class="c-job-result__details__names">
         <h3 class="c-job-result__details__names__title">Poste</h3>
@@ -47,8 +51,14 @@
   position: relative;
 }
 
-.c-job-result__title {
-  margin: 30px 0;
+.c-job-result__title-wrapper {
+  display: flex;
+}
+
+.c-job-result__title-wrapper__title {
+  flex: 1;
+  margin: 10px 0 30px 0;
+  padding: 0 10px;
   text-align: center;
 
   .c--red {

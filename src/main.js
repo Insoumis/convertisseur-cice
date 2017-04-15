@@ -15,7 +15,7 @@ Vue.filter('bigNumber', (jobs) => {
     i = i - 3
   }
 
-  return chunks.reverse().join(' ')
+  return chunks.reverse().join('&nbsp;')
 })
 
 Vue.filter('billions', (number) => {
