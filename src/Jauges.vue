@@ -3,7 +3,7 @@
     <h2 class="c-jauges__title">Définis tes prioritées !</h2>
     <div class="c-jauges__jauge" v-for="(job, index) in joblist">
       <div v-if="job.active">
-        <h3 class="c-jauges__jauge__title">{{ job.plural }} : {{ job.progress.value | billions }} milliards</h3>
+        <h3 class="c-jauges__jauge__title">{{ job.plural }} : {{ job.progress.value | billions }}</h3>
         <input
           type="range"
           min="0"

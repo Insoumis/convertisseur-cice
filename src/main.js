@@ -19,7 +19,10 @@ Vue.filter('bigNumber', (jobs) => {
 })
 
 Vue.filter('billions', (number) => {
-  return (number / 10e8).toFixed(2)
+  const n = (number < 10e8) ? number / 10e5 : number / 10e8
+  const w = (number < 10e8) ? 'millions' : 'milliards'
+
+  return `${n.toFixed(2)} ${w}`
 });
 
 new Vue({

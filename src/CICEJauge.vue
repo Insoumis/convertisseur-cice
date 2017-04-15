@@ -2,9 +2,9 @@
   <div class="c-cice-jauge">
     <div
         class="c-cice-jauge__upper"
-        :style="percent">CICE restant: {{ cice | billions }} milliards</div>
+        :style="percent">CICE restant: {{ cice | billions }}</div>
     <div
-      class="c-cice-jauge__layer">CICE restant: {{ cice | billions }} milliards</div>
+      class="c-cice-jauge__layer">CICE restant: {{ cice | billions }}</div>
   </div>
 </template>
 
@@ -65,11 +65,6 @@ export default {
 
     percent() {
       return { width: `${this.cice / totalCICE * 100}%` }
-    },
-
-    text() {
-      const cice = this.$options.filters.billions(this.cice)
-      return ``
     }
   },
 
