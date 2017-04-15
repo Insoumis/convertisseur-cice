@@ -28,13 +28,18 @@
 
 .c-converter-header__intro {
   font-family: 'Montserrat', sans-serif;
-  margin: 0 0 40px 0;
+  margin: 40px auto 40px auto;
+  max-width: 500px;
   padding: 0 30px;
 }
 
 @media (max-width: 500px) {
   .c-converter-header__title {
     font-size: 22px;
+  }
+
+  .c-converter-header__intro {
+    margin-top: 0;
   }
 }
 </style>
