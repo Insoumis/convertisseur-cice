@@ -18,11 +18,6 @@
         <br/>
         <strong>Simulez les emplois permis par sa suppresion.</strong>
       </p>
-<!--       <div class="c-converter-header__cost">
-        <div class="c--red" v-html="ciceCostHtml"></div>
-        C'est le coût du CICE depuis votre arrivée.<br/>
-        Cela représente <span class="c--red" v-html="ciceMonthHtml"></span> smics annuels; cotisations patronales comprises.
-      </div> -->
   </div>
 </template>
 
@@ -32,6 +27,7 @@
 .c-converter-header {
   box-shadow: 0px 10px 20px 0px rgba($darkGrey, 0.2);
   padding-top: 10px;
+  position: relative;
 }
 
 .c-converter-header__title {

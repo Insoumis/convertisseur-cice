@@ -29,6 +29,7 @@
 @import './theme';
 
 .c-cice-result {
+  box-shadow: 0px 10px 20px 0px rgba($darkGrey, 0.2);
   padding: 100px 0;
 }
 

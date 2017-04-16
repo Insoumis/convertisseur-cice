@@ -8,6 +8,8 @@
       @updateJobs="triggerUpdate"
       @showAllJobs="showAllJobs"></c-jauges>
     <c-cice-result></c-cice-result>
+    <c-cice-cost></c-cice-cost>
+    <c-aec></c-aec>
     <c-sources></c-sources>
   </div>
 </template>
@@ -21,6 +23,8 @@ import CIntro from './Intro.vue'
 import CJobChooser from './JobChooser.vue'
 import CJauges from './Jauges.vue'
 import CCICEResult from './CICEResult.vue'
+import CCICECost from './CICECost.vue'
+import CAEC from './AEC.vue'
 import CSources from './Sources.vue'
 
 export default {
@@ -33,6 +37,8 @@ export default {
     CJobChooser,
     CJauges,
     'c-cice-result': CCICEResult,
+    'c-cice-cost': CCICECost,
+    'c-aec': CAEC,
     CSources
   },
 
