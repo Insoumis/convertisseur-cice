@@ -1,12 +1,16 @@
 <template>
-  <div id="app">
+  <div id="app" :class="allJobsClass">
     <c-header></c-header>
-    <c-cice-jauge :joblist="joblist" ref="ciceJauge"></c-cice-jauge>
     <c-converter-header></c-converter-header>
-    <c-job-chooser @addJob="addJob" @removeJob="removeJob"></c-job-chooser>
-    <c-jauges :joblist="joblist" ref="jauges" @updateJobs="triggerUpdate"></c-jauges>
-    <div class="c-job-space"></div>
-    <c-job-result :joblist="joblist" ref="result"></c-job-result>
+    <div class="c--two-columns">
+      <c-jauges
+        :joblist="joblist"
+        ref="jauges"
+        @updateJobs="triggerUpdate"
+        @showAllJobs="showAllJobs"></c-jauges>
+      <c-job-result :joblist="joblist" ref="result"></c-job-result>
+    </div>
+    <c-sources></c-sources>
   </div>
 </template>
 
@@ -19,6 +23,7 @@ import CConverterHeader from './ConverterHeader.vue'
 import CJobChooser from './JobChooser.vue'
 import CJobResult from './JobResult.vue'
 import CJauges from './Jauges.vue'
+import CSources from './Sources.vue'
 
 export default {
   name: 'app',
@@ -29,29 +34,37 @@ export default {
     CConverterHeader,
     CJobChooser,
     CJobResult,
-    CJauges
+    CJauges,
+    CSources
   },
 
   data() {
-    return { joblist: joblist }
+    return {
+      joblist,
+      allJobs: false
+    }
+  },
+
+  computed: {
+    allJobsClass() {
+      return { 'c--all-jobs': this.allJobs }
+    }
   },
 
   methods: {
-    addJob(index) {
-      this.joblist[index].active = true
+    showAllJobs() {
+      this.allJobs = true
+
+      this.joblist.forEach((job) => {
+        job.active = true
+      })
+
       this.triggerUpdate()
     },
 
-    removeJob(index) {
-      this.joblist[index].active = false
-      this.joblist[index].progress.value = 0
-      this.triggerUpdate()
-    },
-
-    triggerUpdate(index) {
+    triggerUpdate() {
       this.$refs.result.update(this.joblist)
       this.$refs.jauges.update(this.joblist)
-      this.$refs.ciceJauge.update(this.joblist)
     }
   }
 }
@@ -91,7 +104,15 @@ h1, h2, h5 {
   color: $red;
 }
 
-.c-job-space {
-  flex: 1;
+.c--two-columns {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+@media (max-width: 700px) {
+  .c--two-columns {
+    flex-direction: column;
+  }
 }
 </style>

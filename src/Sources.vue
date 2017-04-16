@@ -11,23 +11,24 @@
 @import './theme';
 
 .c-sources {
+  background: lighten($grey, 45%);
+  align-items: baseline;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding-bottom: 10px;
-  padding-right: 10px;
+  flex-direction: row;
+  padding: 10px;
 }
 
 .c-sources__title {
   color: $grey;
-  margin: 0 0 5px 0;
+  margin: 0;
 }
 
 .c-sources__link {
   color: $blue;
-  text-decoration: none;
   font-family: 'Roboto Slab', sans-serif;
+  margin-left: 5px;
   text-align: right;
+  text-decoration: none;
 }
 
 @media(max-width: 500px) {

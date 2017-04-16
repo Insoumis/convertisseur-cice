@@ -1,10 +1,11 @@
 <template>
-  <div class="c-jauges" v-if="isShown">
+  <div class="c-jauges">
     <h2 class="c-jauges__title">Définis tes prioritées !</h2>
     <div class="c-jauges__jauge" v-for="(job, index) in joblist">
       <div v-if="job.active">
         <h3 class="c-jauges__jauge__title">{{ job.plural }} : {{ job.progress.value | billions }}</h3>
         <input
+          class="c-jauges__jauge__input"
           type="range"
           min="0"
           :max="totalCICE"
@@ -13,6 +14,7 @@
           @input="updateValue($event, index)">
       </div>
     </div>
+    <!-- <a href="#" @click.prevent="showAllJobs">Afficher tous les métiers</a> -->
   </div>
 </template>
 
@@ -43,6 +45,17 @@
 .c-jauges__jauge__title {
   color: $red;
   font-family: 'Montserrat', sans-serif;
+}
+
+@media (max-width: 1001px) {
+  .c-jauges__jauge__input {
+    transform: scale(0.8);
+  }
+
+  .c-jauges__jauge__title {
+    margin-bottom: 5px;
+    text-align: center;
+  }
 }
 
 @media (max-width: 500px) {
@@ -79,12 +92,6 @@ export default {
     }
   },
 
-  computed: {
-    isShown() {
-      return this.joblist.filter(job => job.active).length > 0
-    }
-  },
-
   methods: {
     update(joblist) {
       this.joblist = joblist
@@ -116,6 +123,10 @@ export default {
       this.refreshProgressbars()
 
       this.$emit('updateJobs')
+    },
+
+    showAllJobs() {
+      this.$emit('showAllJobs')
     }
   }
 }

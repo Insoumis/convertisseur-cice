@@ -9,7 +9,6 @@
           emplois
         </span>
       </h2>
-      <c-sources></c-sources>
     </div>
     <div class="c-job-result__details" v-if="jobs !== 0">
       <div class="c-job-result__details__names">
@@ -67,8 +66,7 @@
 }
 
 .c-job-result__details {
-  background-color: $flashyBlue;
-  color: $white;
+  color: $darkGrey;
   display: flex;
   flex: 1;
   font-family: 'Montserrat', sans-serif;
@@ -118,14 +116,8 @@
 <script>
 import cice from './cice'
 
-import CSources from './Sources.vue'
-
 export default {
   props: ['joblist'],
-
-  components: {
-    CSources
-  },
 
   data() {
     return {
