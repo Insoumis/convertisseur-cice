@@ -5,7 +5,7 @@
         <span v-if="jobs === 0">Le CICE a créé <span class="c--red">0</span> emplois</span>
         <span v-if="jobs !== 0">
           Le remplacement du CICE créera
-          <span class="c--red" v-html="$options.filters.bigNumber(jobs)"></span>
+          <div class="c--red" v-html="$options.filters.bigNumber(jobs)"></div>
           emplois
         </span>
       </h2>
