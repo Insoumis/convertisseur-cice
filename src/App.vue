@@ -1,15 +1,13 @@
 <template>
   <div id="app" :class="allJobsClass">
     <c-header></c-header>
-    <c-converter-header></c-converter-header>
-    <div class="c--two-columns">
-      <c-jauges
-        :joblist="joblist"
-        ref="jauges"
-        @updateJobs="triggerUpdate"
-        @showAllJobs="showAllJobs"></c-jauges>
-      <c-job-result :joblist="joblist" ref="result"></c-job-result>
-    </div>
+    <c-intro></c-intro>
+    <c-jauges
+      :joblist="joblist"
+      ref="jauges"
+      @updateJobs="triggerUpdate"
+      @showAllJobs="showAllJobs"></c-jauges>
+    <c-cice-result></c-cice-result>
     <c-sources></c-sources>
   </div>
 </template>
@@ -19,10 +17,10 @@ import joblist from './joblist'
 
 import CHeader from './Header.vue'
 import CCICEJauge from './CICEJauge.vue'
-import CConverterHeader from './ConverterHeader.vue'
+import CIntro from './Intro.vue'
 import CJobChooser from './JobChooser.vue'
-import CJobResult from './JobResult.vue'
 import CJauges from './Jauges.vue'
+import CCICEResult from './CICEResult.vue'
 import CSources from './Sources.vue'
 
 export default {
@@ -31,10 +29,10 @@ export default {
   components: {
     CHeader,
     'c-cice-jauge': CCICEJauge,
-    CConverterHeader,
+    CIntro,
     CJobChooser,
-    CJobResult,
     CJauges,
+    'c-cice-result': CCICEResult,
     CSources
   },
 
@@ -63,7 +61,7 @@ export default {
     },
 
     triggerUpdate() {
-      this.$refs.result.update(this.joblist)
+      this.$refs.jauges.$refs.result.update(this.joblist)
       this.$refs.jauges.update(this.joblist)
     }
   }
@@ -98,16 +96,15 @@ h1, h2, h5 {
   display: flex;
   flex: 1;
   flex-direction: column;
+  justify-content: center;
 }
 
 .c--red {
   color: $red;
 }
 
-.c--two-columns {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+.c--space {
+  flex: 1;
 }
 
 @media (max-width: 700px) {

@@ -4,16 +4,25 @@
       Le convertisseur
       <span class="c--red">CICE</span>
     </h1>
-    <div class="c--two-columns">
       <p class="c-converter-header__intro">
-        Le CICE (Crédit d'Impôt Compétitivité et Emploi) est un avantage fiscal pour les entreprises. Il coûte environ 20 milliards par an, sans contrepartie exigée. Initialement financé pour créer des emplois, il n'aura réussi qu'à <em>sauvegarder</em> entre 45 000 et 115 000 emplois. Cela représente donc 200 000€ par emploi protégé. Le CICE a surtout permis d'augmenter les marges des entreprises, et n'a eu aucun effet sur l'emploi. Plus d'informations avec <a href="https://www.facebook.com/FrancoisRuffin80/videos/715943555253851/">une vidéo explicative</a>, et <a href="http://www.strategie.gouv.fr/sites/strategie.gouv.fr/files/atoms/files/rapport_cice2016_28095016_ok.pdf">le rapport complet de France Stratégie</a>.
+        Le CICE (Crédit d'Impôt Compétitivité et Emploi) est un avantage fiscal pour les entreprises.
+        <br/>
+        <br/>
+        <strong>Il coûte environ 20 milliards par an, sans contrepartie exigée. Initialement financé pour créer des emplois, il n'aura réussi qu'à <em>sauvegarder</em> entre 45 000 et 115 000 emplois.</strong> Cela représente donc 200 000€ par emploi protégé.
+        <br/>
+        <br/>
+        Si le CICE était supprimé, 22 milliards pourraient tous les ans être investis dans le secteur public.
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <strong>Simulez les emplois permis par sa suppresion.</strong>
       </p>
-      <div class="c-converter-header__cost">
+<!--       <div class="c-converter-header__cost">
         <div class="c--red" v-html="ciceCostHtml"></div>
         C'est le coût du CICE depuis votre arrivée.<br/>
         Cela représente <span class="c--red" v-html="ciceMonthHtml"></span> smics annuels; cotisations patronales comprises.
-      </div>
-    </div>
+      </div> -->
   </div>
 </template>
 
@@ -21,6 +30,7 @@
 @import './theme';
 
 .c-converter-header {
+  box-shadow: 0px 10px 20px 0px rgba($darkGrey, 0.2);
   padding-top: 10px;
 }
 
@@ -33,11 +43,31 @@
   text-align: center;
 }
 
-.c-converter-header__intro, .c-converter-header__cost {
+.c-converter-header__intro {
   font-family: 'Montserrat', sans-serif;
-  margin: 40px 0;
-  max-width: 500px;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  margin: 100px auto;
+  max-width: 700px;
   padding: 0 30px;
+
+  > strong {
+    font-weight: 500;
+  }
+
+  > strong:last-child {
+    display: block;
+    position: relative;
+    text-align: center;
+
+    &:after {
+      bottom: -35px;
+      content: '↓';
+      left: 50%;
+      position: absolute;
+      transform: translateX(-50%);
+    }
+  }
 
   > div.c--red {
     font-size: 24px;

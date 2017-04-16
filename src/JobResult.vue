@@ -2,40 +2,11 @@
   <div class="c-job-result">
     <div class="c-job-result__title-wrapper">
       <h2 class="c-job-result__title-wrapper__title">
-        <span v-if="jobs === 0">Le CICE a créé <span class="c--red">0</span> emplois</span>
         <span v-if="jobs !== 0">
-          Le remplacement du CICE créera
-          <div class="c--red" v-html="$options.filters.bigNumber(jobs)"></div>
-          emplois
+          Avec vous, le remplacement du CICE créera
+          <div class="c--red" v-html="jobsResult"></div>
         </span>
       </h2>
-    </div>
-    <div class="c-job-result__details" v-if="jobs !== 0">
-      <div class="c-job-result__details__names">
-        <h3 class="c-job-result__details__names__title">Poste</h3>
-        <div v-for="job in details">{{ job.name }}</div>
-      </div>
-      <div class="c-job-result__details__separator"></div>
-      <div class="c-job-result__details__jobs">
-        <h3 class="c-job-result__details__jobs__title">Emplois</h3>
-        <div v-for="job in details">{{ job.jobs }}</div>
-      </div>
-    </div>
-    <div class="c-job-result__details" v-if="jobs === 0">
-      <div class="c-job-result__details__names">
-        <h3 class="c-job-result__details__names__title">Entreprise</h3>
-        <div v-for="company in cice">{{ company.name }}</div>
-      </div>
-      <div class="c-job-result__details__separator"></div>
-      <div class="c-job-result__details__jobs">
-        <h3 class="c-job-result__details__jobs__title">Emplois</h3>
-        <div v-for="company in cice">{{ company.jobs }}</div>
-      </div>
-      <div class="c-job-result__details__separator"></div>
-      <div class="c-job-result__details__jobs">
-        <h3 class="c-job-result__details__jobs__title">CICE touché</h3>
-        <div v-for="company in cice">{{ company.cice / 10e6 }} millions</div>
-      </div>
     </div>
   </div>
 </template>
@@ -46,7 +17,7 @@
 .c-job-result {
   display: flex;
   flex-direction: column;
-  min-height: 320px;
+  margin-top: 40px;
   position: relative;
 }
 
@@ -61,6 +32,7 @@
   text-align: center;
 
   .c--red {
+    color: darken($red, 15%);
     font-size: 140%;
   }
 }
@@ -129,6 +101,12 @@ export default {
 
   mounted() {
     this.update()
+  },
+
+  computed: {
+    jobsResult() {
+      return `${this.$options.filters.bigNumber(this.jobs)} emplois`;
+    }
   },
 
   methods: {
