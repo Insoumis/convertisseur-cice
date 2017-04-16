@@ -25,7 +25,7 @@
 @import './theme';
 
 .c-aec {
-  padding: 100px 0;
+  padding: 100px 10px;
   text-align: center;
 }
 
