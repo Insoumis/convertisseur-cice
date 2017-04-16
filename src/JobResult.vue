@@ -113,13 +113,9 @@ export default {
     update(joblist) {
       this.joblist = this.joblist
 
-      const jobs = this.joblist.filter(job => job.active)
-
-      this.details = jobs.map(job => {
+      this.details = this.joblist.map(job => {
         return {
-          name        : job.name,
-          costPerMonth: job.costPerMonth,
-          jobs        : Math.floor(job.progress.value / (job.costPerMonth * 1.3 * 12))
+          jobs: Math.floor(job.progress.value / (job.costPerMonth * 1.3 * 12))
         }
       })
 

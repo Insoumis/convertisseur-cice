@@ -40,6 +40,7 @@
   font-family: 'Roboto Slab', sans-serif;
   margin: 40px auto;
   max-width: 600px;
+  text-align: center;
 }
 
 .c-job-result__details__names,
