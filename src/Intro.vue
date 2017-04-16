@@ -59,6 +59,7 @@
     &:after {
       bottom: -35px;
       content: '↓';
+      font-size: 32px;
       left: 50%;
       position: absolute;
       transform: translateX(-50%);
@@ -84,11 +85,7 @@
 
 @media (max-width: 500px) {
   .c-converter-header__title {
-    font-size: 22px;
-  }
-
-  .c-converter-header__intro {
-    margin-top: 0;
+    font-size: 28px;
   }
 }
 </style>

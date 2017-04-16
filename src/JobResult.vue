@@ -58,29 +58,8 @@
 }
 
 @media (max-width: 500px) {
-  .c-job-result {
-    min-height: 240px;
-  }
-
-  .c-job-result__title {
-    font-size: 16px;
-    margin: 40px 0
-  }
-
-  .c-job-result__title-wrapper__title .c--red {
-    display: block;
-  }
-
-  .c-job-result__details {
-    font-size: 14px;
-  }
-
-  .c-job-result__details__separator {
-    margin: 0 14px;
-  }
-
-  .c-job-result__details__names__title, .c-job-result__details__jobs__title {
-    font-size: 10px;
+  .c-job-result__title-wrapper__title {
+    font-size: 18px;
   }
 }
 </style>

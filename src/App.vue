@@ -14,6 +14,52 @@
   </div>
 </template>
 
+<style lang="scss">
+@import './theme';
+
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  overflow-y:auto;
+}
+
+body {
+  display: flex;
+  min-height: 100%;
+  margin: 0;
+}
+
+h1, h2, h5 {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+#app {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.c--red {
+  color: $red;
+}
+
+.c--space {
+  flex: 1;
+}
+
+@media (max-width: 700px) {
+  .c--two-columns {
+    flex-direction: column;
+  }
+}
+</style>
+
 <script>
 import joblist from './joblist'
 
@@ -77,49 +123,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-@import './theme';
-
-*, *:after, *:before {
-  box-sizing: border-box;
-}
-
-html {
-  height: 100%;
-  overflow-y:auto;
-}
-
-body {
-  display: flex;
-  min-height: 100%;
-  margin: 0;
-}
-
-h1, h2, h5 {
-  font-family: 'Montserrat', sans-serif;
-  text-transform: uppercase;
-  font-weight: 600;
-}
-
-#app {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.c--red {
-  color: $red;
-}
-
-.c--space {
-  flex: 1;
-}
-
-@media (max-width: 700px) {
-  .c--two-columns {
-    flex-direction: column;
-  }
-}
-</style>

@@ -52,7 +52,7 @@
   background: $white;
   border-radius: 8px;
   margin: 0 auto;
-  width: 720px;
+  max-width: 720px;
 }
 
 .c-jauges__table__header {
@@ -88,10 +88,29 @@
   font-family: 'Montserrat', sans-serif;
   font-size: 13px;
   margin: 0 5px;
+  text-align: right;
 }
 
 .c-jauges__jauge__input {
   max-width: 300px;
+}
+
+@media (max-width: 720px) {
+  .c-jauges__table {
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .c-jauges__jauge__input {
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 500px) {
+  .c-jauges__jauge__title {
+    font-size: 14px;
+  }
 }
 </style>
 

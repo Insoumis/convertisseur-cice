@@ -35,14 +35,4 @@
     text-decoration: underline;
   }
 }
-
-@media(max-width: 500px) {
-  .c-sources {
-    opacity: 0.6;
-  }
-
-  .c-sources__title, .c-sources__link {
-    font-size: 12px;
-  }
-}
 </style>

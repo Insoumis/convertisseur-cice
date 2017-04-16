@@ -61,24 +61,6 @@
     background-color: $flashyBlue;
   }
 }
-
-@media (max-width: 500px) {
-  .c-job-chooser {
-    width: 90%;
-  }
-
-  .c-job-chooser__title {
-    font-size: 15px;
-  }
-
-  .c-job-chooser__list__item {
-    font-size: 14px;
-  }
-
-  .c-job-chooser__list__item__month {
-    display: none;
-  }
-}
 </style>
 
 <script>

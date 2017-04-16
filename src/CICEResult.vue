@@ -30,7 +30,7 @@
 
 .c-cice-result {
   box-shadow: 0px 10px 20px 0px rgba($darkGrey, 0.2);
-  padding: 100px 0;
+  padding: 100px 10px;
 }
 
 .c-cice-result__title {
@@ -62,6 +62,24 @@
   color: $blue;
   font-size: 18px;
   text-transform: uppercase;
+}
+
+@media (max-width: 500px) {
+  .c-job-result__details__separator {
+    margin: 0 5px;
+  }
+
+  .c-job-result__details__names__title,
+  .c-job-result__details__jobs__title,
+  .c-job-result__details__jobs__title {
+    color: $blue;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+
+  .c-job-result__details {
+    font-size: 14px;
+  }
 }
 </style>
 

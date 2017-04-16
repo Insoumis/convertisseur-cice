@@ -13,7 +13,7 @@
 @import './theme';
 
 .c-cice-cost {
-  background: $blue;
+  background: $flashyBlue;
   box-shadow: 0px 10px 20px 0px rgba($darkGrey, 0.2);
   color: $white;
   padding: 100px 0;
