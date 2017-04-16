@@ -55,6 +55,10 @@ export default {
     }
   },
 
+  mounted() {
+    this.triggerUpdate()
+  },
+
   methods: {
     showAllJobs() {
       this.allJobs = true
