@@ -66,6 +66,8 @@ module.exports = {
 }
 
 if (process.env.NODE_ENV === 'production') {
+  const CopyWebpackPlugin = require('copy-webpack-plugin')
+
   module.exports.devtool = '#source-map'
   // http://vue-loader.vuejs.org/en/workflow/production.html
   module.exports.plugins = (module.exports.plugins || []).concat([
@@ -82,6 +84,9 @@ if (process.env.NODE_ENV === 'production') {
     }),
     new webpack.LoaderOptionsPlugin({
       minimize: true
-    })
+    }),
+    new CopyWebpackPlugin([
+      { from: path.join(__dirname, 'src', 'assets', 'favicon.ico'), to: path.join(__dirname, 'dist', 'favicon.ico') }
+    ])
   ])
 }
