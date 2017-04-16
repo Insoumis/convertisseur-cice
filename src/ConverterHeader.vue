@@ -11,7 +11,7 @@
       <div class="c-converter-header__cost">
         <div class="c--red" v-html="ciceCostHtml"></div>
         C'est le coût du CICE depuis votre arrivée.<br/>
-        Cela représente <span class="c--red" v-html="ciceMonthHtml"></span> smics annuels; charges patronales comprises.
+        Cela représente <span class="c--red" v-html="ciceMonthHtml"></span> smics annuels; cotisations patronales comprises.
       </div>
     </div>
   </div>
