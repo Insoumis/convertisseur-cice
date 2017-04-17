@@ -1,9 +1,9 @@
 <template>
   <div class="c-jauges">
-    <h1 class="c-jauges__title">Réinvestissez les fonds du CICE dans les secteurs publics.</h1>
+    <h2 class="c-jauges__title">Réinvestissez les fonds du CICE dans les secteurs publics.</h2>
     <div class="c-jauges__table">
       <div class="c-jauges__table__header">
-        <h2 class="c-jauges__table__header__title">Métiers</h2>
+        <h3 class="c-jauges__table__header__title">Métiers</h3>
         <div class="c--space"></div>
         <c-cice-jauge :joblist=joblist></c-cice-jauge>
       </div>
@@ -32,24 +32,21 @@
 
 .c-jauges {
   background: $flashyBlue;
-  box-shadow: 0px 10px 20px 0px rgba($darkGrey, 0.2);
-  padding: 100px 0;
-
-  > .c-job-result {
-    color: $white;
-  }
+  box-shadow: 0 5px 10px transparentize(#000, 0.8);
 }
 
 .c-jauges__title {
   color: $white;
-  font-size: 18px;
+  font-size: 26px;
   font-weight: 500;
-  margin: 0 0 100px 0;
+  margin: 70px 0 50px;
   text-align: center;
 }
 
 .c-jauges__table {
   background: $white;
+  border: 1px solid darken($flashyBlue, 2%);
+  box-shadow: 0 2px 12px rgba(0,0,0,.12);
   border-radius: 8px;
   margin: 0 auto;
   max-width: 720px;
@@ -57,9 +54,9 @@
 
 .c-jauges__table__header {
   align-items: center;
-  border-bottom: 1px solid lighten($grey, 20%);
+  border-bottom: 1px solid transparentize(#000, 0.8);
   display: flex;
-  padding: 15px;
+  padding: 20px 15px;
 }
 
 .c-jauges__table__header__title {
@@ -68,24 +65,24 @@
 }
 
 .c-jauges__jauge:not(:last-child) {
-  border-bottom: 1px solid lighten($grey, 20%);
+  border-bottom: 1px solid transparentize(#000, 0.8);
 }
 
 .c-jauges__jauge {
   display: flex;
   margin-top: -1px;
-  padding: 10px;
+  padding: 12px 25px;
 }
 
 .c-jauges__jauge__title {
-  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  line-height: 20px;
   margin: 0;
 }
 
 .c-jauges__jauge__jobs {
   align-items: center;
   display: flex;
-  font-family: 'Montserrat', sans-serif;
   font-size: 13px;
   margin: 0 5px;
   text-align: right;
@@ -95,21 +92,34 @@
   max-width: 300px;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 767px) {
+  .c-jauges__title {
+    font-size: 20px;
+    margin: 40px 0 30px;
+  }
+
   .c-jauges__table {
-    border-radius: 0;
+    margin: 0 15px;
   }
-}
 
-@media (max-width: 600px) {
-  .c-jauges__jauge__input {
-    max-width: 150px;
+  .c-jauges__jauge {
+    display: block;
   }
-}
 
-@media (max-width: 500px) {
   .c-jauges__jauge__title {
+    float: left;
+    line-height: 1.8em;
+  }
+
+  .c-jauges__jauge__jobs {
+    display: inline;
+    float: right;
     font-size: 14px;
+    line-height: 1.8em;
+  }
+
+  .c-jauges__jauge__input {
+    max-width: 100%;
   }
 }
 </style>

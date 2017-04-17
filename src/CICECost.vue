@@ -1,10 +1,10 @@
 <template>
   <div class="c-cice-cost">
-      <h1 class="c-cice-cost__title c--red" v-html="ciceCost"></h1>
+      <h2 class="c-cice-cost__title" v-html="ciceCost"></h2>
       <p class="c-cice-cost__text">
         C'est le coût du CICE depuis votre arrivée.
         <br/>
-        Cela représente <span class="c--red" v-html="ciceMonth"></span> smics annuels; cotisations patronales comprises.
+        Cela représente <span class="c--red" v-html="ciceMonth"></span> smics annuels, cotisations patronales comprises.
       </p>
   </div>
 </template>
@@ -13,10 +13,12 @@
 @import './theme';
 
 .c-cice-cost {
-  background: $flashyBlue;
-  box-shadow: 0px 10px 20px 0px rgba($darkGrey, 0.2);
+  background: $red;
+  box-shadow: 0 5px 10px transparentize(#000, 0.8);
   color: $white;
-  padding: 100px 0;
+  padding: 80px 0;
+  text-align: center;
+  z-index: -1;
 
   .c--red {
     color: darken($red, 15%);
@@ -24,19 +26,38 @@
 }
 
 .c-cice-cost__title {
-  font-size: 42px;
-  text-align: center;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,.12);
+  color: $flashyBlue;
+  display: inline-block;
+  padding: 18px;
 }
 
 .c-cice-cost__text {
   font-family: 'Montserrat', sans-serif;
   font-size: 18px;
-  margin-top: 40px;
+  line-height: 1.5em;
+  margin-top: 30px;
   text-align: center;
 
   > .c--red {
     font-weight: bold;
     font-size: 120%;
+  }
+}
+
+@media (max-width: 767px) {
+  .c-cice-cost {
+    padding: 30px 15px;
+  }
+
+  .c-cice-cost__title {
+    font-size: 20px;
+  }
+
+  .c-cice-cost__text {
+    margin-top: 15px;
   }
 }
 </style>

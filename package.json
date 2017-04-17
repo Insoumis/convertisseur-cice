@@ -6,12 +6,13 @@
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "pages": "gh-pages -d ."
   },
   "dependencies": {
     "normalize.css": "^6.0.0",
     "typeface-montserrat": "^0.0.24",
-    "typeface-roboto-slab": "^0.0.22",
+    "typeface-roboto": "^0.0.22",
     "vue": "^2.2.1"
   },
   "devDependencies": {

@@ -4,20 +4,17 @@
       Le convertisseur
       <span class="c--red">CICE</span>
     </h1>
-      <p class="c-converter-header__intro">
-        Le CICE (Crédit d'Impôt Compétitivité et Emploi) est un avantage fiscal pour les entreprises.
-        <br/>
-        <br/>
-        <strong>Il coûte environ 20 milliards par an, sans contrepartie exigée. Initialement financé pour créer des emplois, il n'aura réussi qu'à <em>sauvegarder</em> entre 45 000 et 115 000 emplois.</strong> Cela représente donc 200 000€ par emploi protégé.
-        <br/>
-        <br/>
-        Si le CICE était supprimé, 22 milliards pourraient tous les ans être investis dans le secteur public.
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <strong>Simulez les emplois permis par sa suppresion.</strong>
-      </p>
+    <div class="c-converter-header__intro">
+      <p>Le CICE (Crédit d'Impôt Compétitivité et Emploi) est un avantage fiscal pour les entreprises.</p>
+
+      <p>Il coûte environ <strong>20 milliards par an, sans contrepartie</strong> exigée. Initialement financé pour créer des emplois, il n'aura réussi qu'à sauvegarder entre 45 000 et 115 000 emplois. Cela représente donc <strong>200 000€ par emploi protégé</strong>.</p>
+
+      <p>Si le CICE était supprimé, <strong>22 milliards pourraient tous les ans être investis dans le secteur public</strong>.</p>
+    </div>
+    <div class="c-converter-header__down">
+      Simulez les emplois permis par sa <strong>suppression</strong>
+      <img src="./assets/arrow.down.png" alt="arrow down" height="24" width="24">
+    </div>
   </div>
 </template>
 
@@ -25,67 +22,55 @@
 @import './theme';
 
 .c-converter-header {
-  box-shadow: 0px 10px 20px 0px rgba($darkGrey, 0.2);
+  box-shadow: 0 5px 15px transparentize(#000, 0.8);
   padding-top: 10px;
   position: relative;
-}
 
-.c-converter-header__title {
-  color: $flashyBlue;
-  font-size: 42px;
-  line-height: 54px;
-  margin-bottom: 0;
-  padding: 0 10px;
-  text-align: center;
-}
-
-.c-converter-header__intro {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 18px;
-  letter-spacing: 0.5px;
-  margin: 100px auto;
-  max-width: 700px;
-  padding: 0 30px;
-
-  > strong {
-    font-weight: 500;
+  .c-converter-header__title {
+    color: $flashyBlue;
+    font-size: 50px;
+    margin: 70px 0 60px;
+    padding: 0 10px;
+    text-align: center;
   }
 
-  > strong:last-child {
-    display: block;
+  .c-converter-header__intro {
+    margin: 60px auto;
+    max-width: 700px;
+    line-height: 1.5em;
+    padding: 0 15px;
+
+    strong {font-size: 1.1em;}
+  }
+
+  .c-converter-header__down {
+    color: $flashyBlue;
+    font-family: Montserrat, serif;
+    font-size: 20px;
+    padding: 0 15px 30px;
     position: relative;
     text-align: center;
+    text-transform: uppercase;
 
-    &:after {
-      bottom: -35px;
-      content: '↓';
-      font-size: 32px;
-      left: 50%;
-      position: absolute;
-      transform: translateX(-50%);
+    > strong {
+      color: $red;
+    }
+
+    > img {
+      display: block;
+      margin: 20px auto;
     }
   }
 
-  > div.c--red {
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 20px;
-    text-align: center;
-  }
+  @media (max-width: 767px) {
+    .c-converter-header__title {
+      font-size: 30px;
+      margin: 30px 0;
+    }
 
-  > span.c--red {
-    display: inline-block;
-    width: 40px;
-  }
-
-  &.c-converter-header__cost {
-    text-align: center;
-  }
-}
-
-@media (max-width: 500px) {
-  .c-converter-header__title {
-    font-size: 28px;
+    .c-converter-header__intro {
+      margin: 30px auto 40px;
+    }
   }
 }
 </style>

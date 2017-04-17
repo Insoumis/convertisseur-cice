@@ -27,15 +27,18 @@ html {
 }
 
 body {
+  color: $main;
   display: flex;
+  font-family: Roboto, sans-serif;
   min-height: 100%;
   margin: 0;
 }
 
-h1, h2, h5 {
-  font-family: 'Montserrat', sans-serif;
+h1, h2, h3, h5 {
+  font-family: Montserrat, sans-serif;
   text-transform: uppercase;
   font-weight: 600;
+  padding: 0 15px;
 }
 
 #app {
