@@ -43,6 +43,10 @@
       text-shadow: 0 1px 2px transparentize(#000, 0.6);
     }
   }
+
+  @media (max-width: 767px) {
+    nav {display: none;}
+  }
 }
 </style>
 

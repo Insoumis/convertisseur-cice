@@ -15,6 +15,7 @@
 @import './theme';
 
 .c-job-result {
+  color: #fff;
   display: flex;
   flex-direction: column;
   margin: 30px 0 35px;
@@ -43,9 +44,11 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 767px) {
+  .c-job-result { margin: 20px 0 25px; }
+
   .c-job-result__title-wrapper__title {
-    font-size: 18px;
+    font-size: 20px;
   }
 }
 </style>

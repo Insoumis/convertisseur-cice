@@ -29,7 +29,6 @@
   h1 {
     color: $flashyBlue;
     font-size: 50px;
-    line-height: 54px;
     margin: 70px 0 60px;
     padding: 0 10px;
     text-align: center;
@@ -39,6 +38,7 @@
     margin: 60px auto;
     max-width: 700px;
     line-height: 1.5em;
+    padding: 0 15px;
 
     strong {font-size: 1.1em;}
   }
@@ -47,7 +47,7 @@
     color: $flashyBlue;
     font-family: Montserrat, serif;
     font-size: 20px;
-    padding-bottom: 30px;
+    padding: 0 15px 30px;
     position: relative;
     text-align: center;
     text-transform: uppercase;
@@ -61,14 +61,16 @@
       margin-top: 15px;
     }
   }
-}
 
-/*
-@media (max-width: 500px) {
-  .c-converter-header__title {
-    font-size: 28px;
+  @media (max-width: 767px) {
+    h1 {
+      font-size: 30px;
+      margin: 30px 0;
+    }
+
+    .intro {margin: 30px auto 40px;}
   }
-}*/
+}
 </style>
 
 <script>

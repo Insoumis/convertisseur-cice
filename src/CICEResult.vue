@@ -15,8 +15,8 @@
         <h3 class="c-job-result__details__names__title">Entreprise</h3>
         <div v-for="company in cice"><strong>{{ company.name }}</strong></div>
       </div>
-      <div class="c-job-result__details__jobs">
-        <h3 class="c-job-result__details__jobs__title">CICE touché</h3>
+      <div class="c-job-result__details__cice">
+        <h3 class="c-job-result__details__cice__title">CICE <span>touché</span></h3>
         <div v-for="company in cice">{{ company.cice / 10e6 }} millions</div>
       </div>
       <div class="c-job-result__details__jobs">
@@ -54,6 +54,7 @@
   line-height: 1.5em;
   margin: 40px auto;
   max-width: 700px;
+  padding: 0 15px;
 }
 
 .c-job-result__details {
@@ -61,14 +62,14 @@
   border: 1px solid rgba(0,0,0,.06);
   border-radius: 8px;
   box-shadow: 0 2px 12px rgba(0,0,0,.12);
-  margin: 30px auto 60px;
+  margin: 30px auto 80px;
   max-width: 720px;
   text-align: center;
 }
 
 .c-job-result__details__names,
-.c-job-result__details__jobs,
-.c-job-result__details__jobs {
+.c-job-result__details__cice,
+.c-job-result__details__jobs, {
   width: calc(100% / 3);
 
   > div {
@@ -78,7 +79,7 @@
 }
 
 .c-job-result__details__names__title,
-.c-job-result__details__jobs__title,
+.c-job-result__details__cice__title,
 .c-job-result__details__jobs__title {
   color: $flashyBlue;
   font-size: 18px;
@@ -87,20 +88,42 @@
   text-transform: uppercase;
 }
 
-@media (max-width: 500px) {
-  .c-job-result__details__names__title,
-  .c-job-result__details__jobs__title,
-  .c-job-result__details__jobs__title {
-    color: $blue;
-    font-size: 16px;
-    text-transform: uppercase;
+@media (max-width: 767px) {
+  .c-cice-result__title {
+    font-size: 20px;
+    margin: 50px 0 20px;
   }
 
   .c-job-result__details {
-    font-size: 14px;
-    padding: 30px 10px;
+    margin: 40px 15px;
   }
+
+  .c-job-result__details__names__title,
+  .c-job-result__details__cice__title,
+  .c-job-result__details__jobs__title {
+    font-size: 14px;
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  .c-job-result__details__cice__title span {display: none;}
+
+  .c-job-result__details__names,
+  .c-job-result__details__cice,
+  .c-job-result__details__jobs, {
+    >div {padding: 10px;}
+  }
+
+  .c-job-result__details__names {
+    text-align: left;
+    width: 30%;
+  }
+
+  .c-job-result__details__cice {width: 40%;}
+
+  .c-job-result__details__jobs {width: 30%;}
 }
+
 </style>
 
 <script>

@@ -38,6 +38,7 @@ h1, h2, h3, h5 {
   font-family: Montserrat, sans-serif;
   text-transform: uppercase;
   font-weight: 600;
+  padding: 0 15px;
 }
 
 #app {

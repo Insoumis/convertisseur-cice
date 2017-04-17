@@ -33,10 +33,6 @@
 .c-jauges {
   background: $flashyBlue;
   box-shadow: 0 5px 10px transparentize(#000, 0.8);
-
-  > .c-job-result {
-    color: $white;
-  }
 }
 
 .c-jauges__title {
@@ -96,6 +92,34 @@
   max-width: 300px;
 }
 
+@media (max-width: 767px) {
+  .c-jauges__title {
+    font-size: 20px;
+    margin: 40px 0 30px;
+  }
+
+  .c-jauges__table {
+    margin: 0 15px;
+  }
+
+  .c-jauges__jauge {
+    display: block;
+  }
+
+  .c-jauges__jauge__title {
+    float: left;
+    line-height: 1.8em;
+  }
+
+  .c-jauges__jauge__jobs {
+    display: inline;
+    float: right;
+    font-size: 14px;
+    line-height: 1.8em;
+  }
+}
+
+/*
 @media (max-width: 720px) {
   .c-jauges__table {
     border-radius: 0;
@@ -112,7 +136,7 @@
   .c-jauges__jauge__title {
     font-size: 14px;
   }
-}
+}*/
 </style>
 
 <script>
