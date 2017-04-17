@@ -31,6 +31,7 @@
   box-shadow: 0 2px 12px rgba(0,0,0,.12);
   color: $flashyBlue;
   display: inline-block;
+  min-width: 230px;
   padding: 18px;
 }
 
