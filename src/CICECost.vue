@@ -2,7 +2,7 @@
   <div class="c-cice-cost">
       <h2 class="c-cice-cost__title" v-html="ciceCost"></h2>
       <p class="c-cice-cost__text">
-        C'est le coût du CICE depuis votre arrivée.
+        C'est le coût du CICE depuis votre arrivée sur le site.
         <br/>
         Cela représente <span class="c--red" v-html="ciceMonth"></span> smics annuels, cotisations patronales comprises.
       </p>
