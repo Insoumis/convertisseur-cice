@@ -48,11 +48,17 @@
 }
 
 @media (max-width: 767px) {
-  .c-cice-cost {padding: 30px 15px;}
+  .c-cice-cost {
+    padding: 30px 15px;
+  }
 
-  .c-cice-cost__title {font-size: 20px;}
+  .c-cice-cost__title {
+    font-size: 20px;
+  }
 
-  .c-cice-cost__text {margin-top: 15px;}
+  .c-cice-cost__text {
+    margin-top: 15px;
+  }
 }
 </style>
 

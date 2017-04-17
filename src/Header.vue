@@ -1,7 +1,7 @@
 <template>
   <header class="c-header">
-    <a href="http://discord.insoumis.online/" class="logo" target="_blank">Discord Insoumis</a>
-    <nav>
+    <a href="http://discord.insoumis.online/" class="c-header__logo" target="_blank">Discord Insoumis</a>
+    <nav class="c-header__nav">
       <a target="_blank" href="https://jlm2017.fr/">jlm2017.fr</a>
       <a target="_blank" href="https://laec.fr/">Consultez le programme</a>
       <a target="_blank" href="https://impots.jlm2017.fr/">Simulateur d'impôts</a>
@@ -19,7 +19,7 @@
   height: 54px;
   padding: 8px 20px;
 
-  .logo {
+  .c-header__logo {
     background: url('assets/logo.png') center no-repeat;
     background-size: cover;
     display: inline-block;
@@ -29,11 +29,11 @@
     width: 132px;
   }
 
-  nav {
+  .c-header__nav {
     display: inline-block;
     margin-left: 20px;
 
-    a {
+    > a {
       color: #fff;
       font-family: Montserrat, serif;
       font-size: 14px;
@@ -45,7 +45,9 @@
   }
 
   @media (max-width: 767px) {
-    nav {display: none;}
+    .c-header__nav {
+      display: none;
+    }
   }
 }
 </style>

@@ -36,6 +36,8 @@
 }
 
 @media (max-width: 767px) {
-  .c-sources__link {margin-left: 8px;}
+  .c-sources__link {
+    margin-left: 8px;
+  }
 }
 </style>

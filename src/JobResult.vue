@@ -4,7 +4,7 @@
       <h2 class="c-job-result__title-wrapper__title">
         <span v-if="jobs !== 0">
           Avec vous, le remplacement du CICE créera<br />
-          <span class="result" v-html="jobsResult"></span>
+          <span class="c-job-result__title-wrapper__title__result" v-html="jobsResult"></span>
         </span>
       </h2>
     </div>
@@ -32,7 +32,7 @@
   padding: 0 10px;
   text-align: center;
 
-  .result {
+  .c-job-result__title-wrapper__title__result {
     background: #fff;
     border: 1px solid darken($flashyBlue, 2%);
     border-radius: 8px;
@@ -45,7 +45,9 @@
 }
 
 @media (max-width: 767px) {
-  .c-job-result { margin: 20px 0 25px; }
+  .c-job-result {
+    margin: 20px 0 25px;
+  }
 
   .c-job-result__title-wrapper__title {
     font-size: 20px;

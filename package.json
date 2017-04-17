@@ -7,13 +7,12 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
-    "deploy": "npm run build && gh-pages -d .",
     "pages": "gh-pages -d ."
   },
   "dependencies": {
     "normalize.css": "^6.0.0",
     "typeface-montserrat": "^0.0.24",
-    "typeface-roboto": "0.0.22",
+    "typeface-roboto": "^0.0.22",
     "vue": "^2.2.1"
   },
   "devDependencies": {
@@ -24,7 +23,6 @@
     "cross-env": "^3.0.0",
     "css-loader": "^0.28.0",
     "file-loader": "^0.11.1",
-    "gh-pages": "^0.12.0",
     "node-sass": "^4.5.0",
     "sass-loader": "^5.0.1",
     "style-loader": "^0.16.1",

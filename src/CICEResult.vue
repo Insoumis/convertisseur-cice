@@ -1,7 +1,7 @@
 <template>
   <div class="c-cice-result">
     <h2 class="c-cice-result__title">
-      Or jusqu'à présent, le cice n'a fait que "sauvegarder"<br />
+      Or jusqu'à présent, le cice n'a fait que &laquo; sauvegarder &raquo;<br />
       <span class="c--red">115 000 emplois</span>
     </h2>
     <div class="c-cice-result__text">
@@ -106,12 +106,16 @@
     text-transform: uppercase;
   }
 
-  .c-job-result__details__cice__title span {display: none;}
+  .c-job-result__details__cice__title > span {
+    display: none;
+  }
 
   .c-job-result__details__names,
   .c-job-result__details__cice,
   .c-job-result__details__jobs, {
-    >div {padding: 10px;}
+    > div {
+      padding: 10px;
+    }
   }
 
   .c-job-result__details__names {
@@ -119,9 +123,13 @@
     width: 32%;
   }
 
-  .c-job-result__details__cice {width: 40%;}
+  .c-job-result__details__cice {
+    width: 40%;
+  }
 
-  .c-job-result__details__jobs {width: 28%;}
+  .c-job-result__details__jobs {
+    width: 28%;
+  }
 }
 
 </style>

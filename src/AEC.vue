@@ -2,7 +2,7 @@
   <div class="c-aec">
     <h2 class="c-aec__title">Envie d'en savoir <span class="c--red">plus ?</span> </h2>
 
-    <div class="content">
+    <div class="c-aec__content">
       <p>
         Nous remercions l'excellente équipe de Fakir qui nous a donné l'idée de ce convertisseur avec leur article, <a target="_blank" href="http://www.fakirpresse.info/cice-la-vraie-france-des-assistes">CICE : LA (VRAIE) FRANCE DES ASSISTÉS !</a>
       </p>
@@ -31,7 +31,7 @@
     text-align: center;
   }
 
-  .content {
+  .c-aec__content {
     line-height: 1.5em;
     margin: 0 auto 150px;
     max-width: 700px;
@@ -43,12 +43,14 @@
   }
 
   @media (max-width: 767px) {
-    h2 {
+    .c-aec__title {
       font-size: 20px;
       margin: 40px 0 30px;
     }
 
-    .content {margin-bottom: 80px;}
+    .c-aec__content {
+      margin-bottom: 80px;
+    }
   }
 }
 </style>
