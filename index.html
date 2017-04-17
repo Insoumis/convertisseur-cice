@@ -28,7 +28,35 @@
     <title>Discord Insoumis — Convertisseur CICE</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <div class="header"></div>
+      <div class="intro"></div>
+      <div class="jauges"></div>
+      <style type="text/css">
+        html { height: 100%; }
+        body { height: 100%; margin: 0; }
+
+        #app { height: 100%; }
+
+        .header {
+          background: #c9462c;
+          border-bottom: 1px solid #bc4229;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+          height: 54px;
+        }
+
+        .intro {
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+          height: 500px;
+          position: relative;
+        }
+
+        .jauges {
+          background: #23b9d0;
+          height: calc(100% - 500px);
+        }
+      </style>
+    </div>
     <script src="./dist/build.js"></script>
   </body>
 </html>
