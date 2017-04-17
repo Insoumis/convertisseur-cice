@@ -13,7 +13,7 @@
     </div>
     <div class="down">
       Simulez les emplois permis par sa <strong>suppression</strong>
-      <i class="fa fa-chevron-circle-down" aria-hidden="true"></i>
+      <img src="./assets/arrow.down.png" alt="arrow down" height="24" width="24">
     </div>
   </div>
 </template>
@@ -54,11 +54,9 @@
 
     strong {color: $red;}
 
-    i {
-      color: $main;
+    img {
       display: block;
-      font-size: 1.2em;
-      margin-top: 15px;
+      margin: 20px auto;
     }
   }
 
