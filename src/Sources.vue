@@ -35,4 +35,10 @@
     text-decoration: underline;
   }
 }
+
+@media (max-width: 500px) {
+  .c-sources__link {
+    font-size: 12px;
+  }
+}
 </style>

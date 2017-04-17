@@ -79,6 +79,7 @@
 
   .c-job-result__details {
     font-size: 14px;
+    padding: 30px 10px;
   }
 }
 </style>
