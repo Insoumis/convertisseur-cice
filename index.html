@@ -30,11 +30,18 @@
   <body>
     <div id="app">
       <div class="header"></div>
-      <div class="intro"></div>
+      <div class="intro">
+        <h1>LE CONVERTISSEUR CICE</h1>
+        <p>Le CICE (Crédit d'Impôt Compétitivité et Emploi) est un avantage fiscal pour les entreprises.<br/>
+        <br/>
+        Il coûte environ 20 milliards par an, sans contrepartie exigée. Initialement financé pour créer des emplois, il n'aura réussi qu'à sauvegarder entre 45 000 et 115 000 emplois. Cela représente donc 200 000€ par emploi protégé.<br/>
+        <br/>
+        Si le CICE était supprimé, 22 milliards pourraient tous les ans être investis dans le secteur public.</p>
+      </div>
       <div class="jauges"></div>
       <style type="text/css">
         html { height: 100%; }
-        body { height: 100%; margin: 0; }
+        body { height: 100%; margin: 0; font-family: sans-serif; }
 
         #app { height: 100%; }
 
@@ -49,6 +56,15 @@
           box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
           height: 500px;
           position: relative;
+        }
+
+        .intro > h1 {
+          text-align: center;
+        }
+
+        .intro > p {
+          margin: 40px auto;
+          max-width: 700px;
         }
 
         .jauges {
