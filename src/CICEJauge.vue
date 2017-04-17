@@ -19,6 +19,12 @@
   white-space: nowrap;
   overflow: hidden;
 }
+
+@media (max-width: 500px) {
+  .c-cice-jauge {
+    font-size: 13px;
+  }
+}
 </style>
 
 <script>

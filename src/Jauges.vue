@@ -132,6 +132,10 @@
   .c-jauges__table__header {
     padding: 20px 5px;
   }
+
+  .c-jauges__jauge {
+    font-size: 13px;
+  }
 }
 </style>
 

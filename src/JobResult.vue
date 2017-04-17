@@ -40,6 +40,7 @@
     color: $red;
     display: inline-block;
     margin-top: 25px;
+    min-width: 230px;
     padding: 18px;
   }
 }
