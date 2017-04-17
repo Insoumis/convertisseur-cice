@@ -3,8 +3,8 @@
     <div class="c-job-result__title-wrapper">
       <h2 class="c-job-result__title-wrapper__title">
         <span v-if="jobs !== 0">
-          Avec vous, le remplacement du CICE créera
-          <div class="c--red" v-html="jobsResult"></div>
+          Avec vous, le remplacement du CICE créera<br />
+          <span class="result" v-html="jobsResult"></span>
         </span>
       </h2>
     </div>
@@ -17,7 +17,7 @@
 .c-job-result {
   display: flex;
   flex-direction: column;
-  margin-top: 40px;
+  margin: 30px 0 35px;
   position: relative;
 }
 
@@ -31,30 +31,16 @@
   padding: 0 10px;
   text-align: center;
 
-  .c--red {
-    color: darken($red, 15%);
-    font-size: 140%;
+  .result {
+    background: #fff;
+    border: 1px solid darken($flashyBlue, 2%);
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.12);
+    color: $red;
+    display: inline-block;
+    margin-top: 25px;
+    padding: 18px;
   }
-}
-
-.c-job-result__details {
-  color: $darkGrey;
-  display: flex;
-  flex: 1;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 18px;
-  justify-content: center;
-  padding: 30px;
-}
-
-.c-job-result__details__separator {
-  background-color: $white;
-  margin: 0 20px;
-  width: 1px;
-}
-
-.c-job-result__details__names__title, .c-job-result__details__jobs__title {
-  margin-top: 0;
 }
 
 @media (max-width: 500px) {

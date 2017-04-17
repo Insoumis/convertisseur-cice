@@ -34,7 +34,7 @@ body {
   margin: 0;
 }
 
-h1, h2, h5 {
+h1, h2, h3, h5 {
   font-family: Montserrat, sans-serif;
   text-transform: uppercase;
   font-weight: 600;

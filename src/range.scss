@@ -10,14 +10,11 @@ input[type=range]::-webkit-slider-runnable-track {
   width: 100%;
   height: 10px;
   cursor: pointer;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0px 0px 1px rgba(13, 13, 13, 0);
   background: #23b9d0;
   border-radius: 25px;
-  border: 1px solid #010101;
 }
 input[type=range]::-webkit-slider-thumb {
-  box-shadow: 0.9px 0.9px 1px rgba(0, 0, 49, 0), 0px 0px 0.9px rgba(0, 0, 75, 0);
-  border: 1px solid #000000;
+  border: 1px solid transparentize(#000, 0.7);
   height: 20px;
   width: 20px;
   border-radius: 20px;

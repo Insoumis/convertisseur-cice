@@ -22,15 +22,15 @@
 @import './theme';
 
 .c-converter-header {
-  box-shadow: 0px 10px 20px 0px rgba($darkGrey, 0.2);
+  box-shadow: 0 5px 15px transparentize(#000, 0.8);
   padding-top: 10px;
   position: relative;
 
   h1 {
     color: $flashyBlue;
-    font-size: 46px;
+    font-size: 50px;
     line-height: 54px;
-    margin: 50px 0;
+    margin: 70px 0 60px;
     padding: 0 10px;
     text-align: center;
   }
@@ -47,7 +47,7 @@
     color: $flashyBlue;
     font-family: Montserrat, serif;
     font-size: 20px;
-    padding-bottom: 25px;
+    padding-bottom: 30px;
     position: relative;
     text-align: center;
     text-transform: uppercase;
@@ -63,52 +63,7 @@
   }
 }
 
-
-
-/*.c-converter-header__intro {
-  //font-family: 'Montserrat', sans-serif;
-  font-size: 18px;
-  letter-spacing: 0.5px;
-  margin: 100px auto;
-  max-width: 700px;
-  padding: 0 30px;
-
-  > strong {
-    font-weight: 500;
-  }
-
-  > strong:last-child {
-    display: block;
-    position: relative;
-    text-align: center;
-
-    &:after {
-      bottom: -35px;
-      content: '↓';
-      font-size: 32px;
-      left: 50%;
-      position: absolute;
-      transform: translateX(-50%);
-    }
-  }
-
-  > div.c--red {
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-
-  > span.c--red {
-    display: inline-block;
-    width: 40px;
-  }
-
-  &.c-converter-header__cost {
-    text-align: center;
-  }
-}
-
+/*
 @media (max-width: 500px) {
   .c-converter-header__title {
     font-size: 28px;
