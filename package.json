@@ -13,6 +13,7 @@
     "normalize.css": "^6.0.0",
     "typeface-montserrat": "^0.0.24",
     "typeface-roboto": "^0.0.22",
+    "typeface-roboto-slab": "^0.0.22",
     "vue": "^2.2.1"
   },
   "devDependencies": {
