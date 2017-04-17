@@ -117,26 +117,11 @@
     font-size: 14px;
     line-height: 1.8em;
   }
-}
 
-/*
-@media (max-width: 720px) {
-  .c-jauges__table {
-    border-radius: 0;
-  }
-}
-
-@media (max-width: 600px) {
   .c-jauges__jauge__input {
-    max-width: 150px;
+    max-width: 100%;
   }
 }
-
-@media (max-width: 500px) {
-  .c-jauges__jauge__title {
-    font-size: 14px;
-  }
-}*/
 </style>
 
 <script>

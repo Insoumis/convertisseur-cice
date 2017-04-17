@@ -116,12 +116,12 @@
 
   .c-job-result__details__names {
     text-align: left;
-    width: 30%;
+    width: 32%;
   }
 
   .c-job-result__details__cice {width: 40%;}
 
-  .c-job-result__details__jobs {width: 30%;}
+  .c-job-result__details__jobs {width: 28%;}
 }
 
 </style>
