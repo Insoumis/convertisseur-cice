@@ -1,35 +1,48 @@
 <template>
-  <div class="c-header">
-    <a href="http://discord.insoumis.online/" class="c-header__discord">Discord</a>
-    <img src="./assets/logo.png" height="60">
-  </div>
+  <header class="c-header">
+    <a href="http://discord.insoumis.online/" class="logo" target="_blank">Discord Insoumis</a>
+    <nav>
+      <a target="_blank" href="https://jlm2017.fr/">jlm2017.fr</a>
+      <a target="_blank" href="https://laec.fr/">Consultez le programme</a>
+      <a target="_blank" href="https://impots.jlm2017.fr/">Simulateur d'impôts</a>
+    </nav>
+  </header>
 </template>
 
 <style lang="scss">
 @import './theme';
 
 .c-header {
-  align-items: center;
-  background-color: $red;
-  display: flex;
-  height: 80px;
-  justify-content: center;
-  padding: 0 40px;
-}
+  background: $red;
+  border-bottom: 1px solid darken($red, 3%);
+  box-shadow: 0 2px 4px transparentize(#000, 0.8);
+  height: 54px;
+  padding: 8px 20px;
 
-.c-header__discord {
-  background-color: rgba(0, 0, 0, 0.15);
-  border-radius: 3px;
-  border: 1px solid rgba(255, 255, 255, 0.55);
-  color: $white;
-  cursor: pointer;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
-  left: 10px;
-  padding: 5px 10px;
-  position: absolute;
-  text-decoration: none;
-  text-transform: uppercase;
+  .logo {
+    background: url('assets/logo.png') center no-repeat;
+    background-size: cover;
+    display: inline-block;
+    height: 36px;
+    text-indent: -9999px;
+    vertical-align: middle;
+    width: 132px;
+  }
+
+  nav {
+    display: inline-block;
+    margin-left: 20px;
+
+    a {
+      color: #fff;
+      font-family: Montserrat, serif;
+      font-size: 14px;
+      line-height: 36px;
+      margin: 0 6px;
+      text-decoration: none;
+      text-shadow: 0 1px 2px transparentize(#000, 0.6);
+    }
+  }
 }
 </style>
 

@@ -27,13 +27,15 @@ html {
 }
 
 body {
+  color: $main;
   display: flex;
+  font-family: Roboto, sans-serif;
   min-height: 100%;
   margin: 0;
 }
 
 h1, h2, h5 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: Montserrat, sans-serif;
   text-transform: uppercase;
   font-weight: 600;
 }
