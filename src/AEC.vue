@@ -15,7 +15,10 @@
       <ul>
         <li><strong>Suppression du CICE</strong> et des autres niches fiscales.</li>
         <li>Recrutement de <strong>fonctionnaires</strong>.</li>
-        <li>Plan de relance de 100 milliards pour la <strong>planification écologique</strong>.</li>
+        <li>Plan de relance de 100 milliards pour la <strong>planification écologique</strong> et l'<strong>économie de la mer</strong>.</li>
+        <li>Réforme de l'impôt sur les sociétés pour que les <strong>PME paient moins</strong> et que le <strong>CAC40 n'y échappe plus</strong>.</li>
+        <li>Favorisation de l'<strong>investissement</strong> plutôt que les dividendes aux actionnaires.</li>
+        <li>Instauration d'un <strong>fonds de solidarité inter-entreprises</strong> au profit des PME et des sous-traitants.</li>
       </ul>
     </div>
   </div>
