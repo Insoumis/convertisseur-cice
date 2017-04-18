@@ -26,7 +26,7 @@ const jobs = [
   },
   {
     name: 'Policier municipal',
-    plural: 'Policiers.ères municipaux',
+    plural: 'Policiers.ères municipaux.ales',
     costPerMonth: 1800,
     active: true,
     progress: { min: 0, max: totalCICE, value: 0 }

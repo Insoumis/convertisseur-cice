@@ -123,21 +123,6 @@
     max-width: 100%;
   }
 }
-
-@media(max-width: 500px) {
-  .c-jauges__table {
-    border-radius: 0;
-    margin: 0;
-  }
-
-  .c-jauges__table__header {
-    padding: 20px 5px;
-  }
-
-  .c-jauges__jauge {
-    font-size: 13px;
-  }
-}
 </style>
 
 <script>
