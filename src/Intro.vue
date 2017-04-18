@@ -7,9 +7,9 @@
     <div class="c-converter-header__intro">
       <p>Le CICE (Crédit d'Impôt Compétitivité et Emploi) est un avantage fiscal pour les entreprises.</p>
 
-      <p>Il coûte environ <strong>20 milliards par an, sans contrepartie</strong> exigée. Initialement financé pour créer des emplois, il n'aura réussi qu'à sauvegarder entre 45 000 et 115 000 emplois. Cela représente donc <strong>200 000€ par emploi protégé</strong>.</p>
+      <p>Il coûte environ <strong>20 milliards d'euros par an, sans contrepartie</strong> exigée. Initialement financé pour créer des emplois, il n'aura réussi qu'à sauvegarder entre 45 000 et 115 000 emplois. Cela représente donc <strong>200 000 euros par emploi protégé</strong>.</p>
 
-      <p>Si le CICE était supprimé, <strong>22 milliards pourraient tous les ans être investis dans le secteur public</strong>.</p>
+      <p>Si le CICE était supprimé, ce sont donc <strong>20 milliards d'euros qui pourraient être investis dans le secteur public</strong> chaque année.</p>
     </div>
     <div class="c-converter-header__down">
       Simulez les emplois permis par sa <strong>suppression</strong>
