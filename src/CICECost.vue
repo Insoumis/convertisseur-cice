@@ -75,7 +75,7 @@ export default {
 
   computed: {
     ciceCost() {
-      return `${this.$options.filters.bigNumber(this.cost)}€`
+      return `${this.$options.filters.bigNumber(Math.round(this.cost))}€`
     },
 
     ciceMonth() {
