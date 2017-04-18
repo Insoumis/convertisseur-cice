@@ -132,14 +132,6 @@
   }
 }
 
-@media (max-width: 500px) {
-  .c-job-result__details {
-    border-radius: 0;
-    margin-left: 0;
-    margin-right: 0;
-  }
-}
-
 </style>
 
 <script>
