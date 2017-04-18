@@ -3,7 +3,7 @@
     <a href="http://discord.insoumis.online/" class="c-header__logo" target="_blank">Discord Insoumis</a>
     <nav class="c-header__nav">
       <a target="_blank" href="https://jlm2017.fr/" title="Site de la campagne de Jean-Luc Mélenchon">jlm2017.fr</a>
-      <a target="_blank" href="https://laec.fr/" title="Programme de la France Insoumise">Consultez le programme</a>
+      <a target="_blank" href="https://laec.fr/" title="Programme de Mélenchon pour la France Insoumise">Consultez le programme</a>
       <a target="_blank" href="https://impots.jlm2017.fr/" title="Simulateur d'impôts de la campagne de la France Insoumise">Simulateur d'impôts</a>
     </nav>
   </header>
