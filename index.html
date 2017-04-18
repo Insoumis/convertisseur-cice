@@ -3,6 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Discord Insoumis — Convertisseur CICE</title>
+    <meta name="keywords" content="CICE, Crédit, Impôt, Compétitivité, Emploi, Flexibilité, Convertisseur, Mélenchon, Avenir, Commun, Programme">
+    <meta name="description" content="Convertissez l'argent donné aux entreprises via le CICE en recrutements dans le secteur public !">
 
     <meta property="og:site_name" content="Convertisseur CICE"/>
     <meta property="og:title" content="Discord Insoumis — Convertisseur CICE"/>
@@ -20,61 +25,164 @@
     <meta name="twitter:description" content="Convertissez l'argent donné aux entreprises via le CICE en recrutements dans le secteur public !"/>
     <meta name="twitter:image" content="http://convertisseur-cice.fr/large.png">
 
-    <meta name="keywords" content="CICE, Crédit, Impôt, Compétitivité, Emploi, Flexibilité, Convertisseur, Mélenchon, Avenir, Commun, Programme">
-    <meta name="description" content="Convertissez l'argent donné aux entreprises via le CICE en recrutements dans le secteur public !">
-
     <meta name="theme-color" content="#c9462c">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="./dist/favicon.ico" />
-    <title>Discord Insoumis — Convertisseur CICE</title>
+
+    <style>
+    *, *:after, *:before {
+      box-sizing: border-box;
+    }
+
+    body {
+      color: #666;
+      display: flex;
+      font-family: Roboto, sans-serif;
+      margin: 0;
+    }
+
+    h1, h2, h3, h5 {
+      font-family: Montserrat, sans-serif;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding: 0 15px;
+    }
+
+    #app {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .c-header {
+      background: #c9462c;
+      border-bottom: 1px solid darken($red, 3%);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      height: 54px;
+      padding: 8px 20px;
+    }
+
+    .c-header__logo {
+      background: url('./dist/assets/logo.png') center no-repeat;
+      background-size: cover;
+      display: inline-block;
+      height: 36px;
+      text-indent: -9999px;
+      vertical-align: middle;
+      width: 132px;
+    }
+
+    .c-header__nav {
+      display: inline-block;
+      margin-left: 20px;
+    }
+
+    .c-header__nav > a {
+      color: #fff;
+      font-family: Montserrat, serif;
+      font-size: 14px;
+      line-height: 36px;
+      margin: 0 6px;
+      text-decoration: none;
+      text-shadow: 0 1px 2px rgba(0,0,0, 0.4);
+    }
+
+    .c-converter-header {
+      box-shadow: 0 5px 15px transparentize(#000, 0.8);
+      padding-top: 10px;
+      position: relative;
+    }
+
+    .c-converter-header__title {
+      color: #23b9d0;
+      font-size: 50px;
+      margin: 70px 0 60px;
+      padding: 0 10px;
+      text-align: center;
+    }
+
+    .c-converter-header__intro {
+      margin: 60px auto;
+      max-width: 700px;
+      line-height: 1.5em;
+      padding: 0 15px;
+    }
+
+    .c-converter-header__intro strong {font-size: 1.1em;}
+
+    .c-converter-header__down {
+      color: #23b9d0;
+      font-family: Montserrat, serif;
+      font-size: 20px;
+      padding: 0 15px 30px;
+      position: relative;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .c--red,
+    .c-converter-header__down > strong {
+      color: #c9462c;
+    }
+
+    .c-converter-header__down > img {
+      display: block;
+      margin: 20px auto;
+    }
+
+    .c-jauges {
+      background: #23b9d0;
+      height: 100vh;
+    }
+
+    @media (max-width: 767px) {
+      .c-header__nav {
+        display: none;
+      }
+
+      .c-converter-header__title {
+        font-size: 30px;
+        margin: 30px 0;
+      }
+
+      .c-converter-header__intro {
+        margin: 30px auto 40px;
+      }
+    }
+    </style>
   </head>
   <body>
     <div id="app">
-      <div class="header"></div>
-      <div class="intro">
-        <h1>LE CONVERTISSEUR CICE</h1>
-        <p>Le CICE (Crédit d'Impôt Compétitivité et Emploi) est un avantage fiscal pour les entreprises.<br/>
-        <br/>
-        Il coûte environ 20 milliards par an, sans contrepartie exigée. Initialement financé pour créer des emplois, il n'aura réussi qu'à sauvegarder entre 45 000 et 115 000 emplois. Cela représente donc 200 000€ par emploi protégé.<br/>
-        <br/>
-        Si le CICE était supprimé, 22 milliards pourraient tous les ans être investis dans le secteur public.</p>
+      <header class="c-header">
+        <a href="http://discord.insoumis.online/" class="c-header__logo" target="_blank">Discord Insoumis</a>
+        <nav class="c-header__nav">
+          <a target="_blank" href="https://jlm2017.fr/" title="Site de la campagne de Jean-Luc Mélenchon">jlm2017.fr</a>
+          <a target="_blank" href="https://laec.fr/" title="Programme de Mélenchon pour la France Insoumise">Consultez le programme</a>
+          <a target="_blank" href="https://impots.jlm2017.fr/" title="Simulateur d'impôts de la campagne de la France Insoumise">Simulateur d'impôts</a>
+        </nav>
+      </header>
+
+      <div class="c-converter-header">
+        <h1 class="c-converter-header__title">
+          Le convertisseur
+          <span class="c--red">CICE</span>
+        </h1>
+        <div class="c-converter-header__intro">
+          <p>Le CICE (Crédit d'Impôt Compétitivité et Emploi) est un avantage fiscal pour les entreprises.</p>
+
+          <p>Il coûte environ <strong>20 milliards d'euros par an, sans contrepartie</strong> exigée. Initialement financé pour créer des emplois, il n'aura réussi qu'à sauvegarder entre 45 000 et 115 000 emplois. Cela représente donc <strong>200 000 euros par emploi protégé</strong>.</p>
+
+          <p>Si le CICE était supprimé, ce sont donc <strong>20 milliards d'euros qui pourraient être investis dans le secteur public</strong> chaque année.</p>
+        </div>
+        <div class="c-converter-header__down">
+          Simulez les emplois permis par sa <strong>suppression</strong>
+          <img src="./dist/assets/arrow.down.png" alt="arrow down" height="24" width="24">
+        </div>
       </div>
-      <div class="jauges"></div>
-      <style type="text/css">
-        html { height: 100%; }
-        body { height: 100%; margin: 0; font-family: sans-serif; }
 
-        #app { height: 100%; }
-
-        .header {
-          background: #c9462c;
-          border-bottom: 1px solid #bc4229;
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-          height: 54px;
-        }
-
-        .intro {
-          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-          height: 500px;
-          position: relative;
-        }
-
-        .intro > h1 {
-          text-align: center;
-        }
-
-        .intro > p {
-          margin: 40px auto;
-          max-width: 700px;
-        }
-
-        .jauges {
-          background: #23b9d0;
-          height: calc(100% - 500px);
-        }
-      </style>
+      <div class="c-jauges"></div>
     </div>
-    <script src="./dist/build.js"></script>
+    <!--<script src="./dist/build.js"></script>-->
   </body>
 </html>
