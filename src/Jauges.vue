@@ -33,6 +33,7 @@
 .c-jauges {
   background: $flashyBlue;
   box-shadow: 0 5px 10px transparentize(#000, 0.8);
+  height: auto;
 }
 
 .c-jauges__title {
