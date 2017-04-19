@@ -3,11 +3,11 @@
   "description": "Convertisseur CICE du Discord Insoumis",
   "version": "1.0.0",
   "authors": [
-    "@DuaelFR"
-    "@fer di"
-    "@gjuchault"
-    "@lucasgautheron"
-    "@snae"
+    "@DuaelFR",
+    "@fer di",
+    "@gjuchault",
+    "@lucasgautheron",
+    "@snae",
     "@SraM"
   ],
   "private": true,
