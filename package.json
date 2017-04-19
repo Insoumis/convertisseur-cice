@@ -2,7 +2,14 @@
   "name": "convertisseur-cice",
   "description": "Convertisseur CICE du Discord Insoumis",
   "version": "1.0.0",
-  "author": "Gabriel JUCHAULT <gabriel.juchault@gmail.com>",
+  "authors": [
+    "@DuaelFR"
+    "@fer di"
+    "@gjuchault"
+    "@lucasgautheron"
+    "@snae"
+    "@SraM"
+  ],
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
