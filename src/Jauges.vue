@@ -123,6 +123,16 @@
     max-width: 100%;
   }
 }
+
+@media (max-width: 500px) {
+  .c-jauges__table__header__title {
+    padding: 0;
+  }
+
+  .c-cice-jauge__layer {
+    font-size: 13px;
+  }
+}
 </style>
 
 <script>
