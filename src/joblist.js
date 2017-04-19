@@ -8,7 +8,7 @@ const jobs = [
     plural: 'Infirmiers.ères',
     costPerMonth: 2100,
     active: true,
-    progress: { min: 0, max: totalCICE, value: 5 * 10e8 }
+    progress: { min: 0, max: totalCICE, value: 0 }
   },
   {
     name: 'Instituteur',

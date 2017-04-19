@@ -10,6 +10,9 @@
         Vous pouvez trouver des informations sur cette <a href="https://www.facebook.com/FrancoisRuffin80/videos/715943555253851/">vidéo explicative</a> et le rapport de <a href="http://www.strategie.gouv.fr/sites/strategie.gouv.fr/files/atoms/files/rapport_cice2016_28095016_ok.pdf">France Stratégie</a>.
       </p>
       <p>
+        La chaîne YouTube d'Osons Causer a aussi traité ce sujet dans <a href="https://www.youtube.com/watch?v=56hLRvsWbCA">une de leurs vidéos</a>.
+      </p>
+      <p>
         Découvrez aussi les propositions de <a href="https://laec.fr" title="Programme de Mélenchon pour la France Insoumise">l'Avenir en Commun</a>, le programme de la France Insoumise :
       </p>
       <ul>
