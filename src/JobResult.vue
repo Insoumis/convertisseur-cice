@@ -54,6 +54,13 @@
     font-size: 20px;
   }
 }
+
+@media (max-width: 500px) {
+  .c-job-result__details {
+    border-radius: 0 !important;
+    margin: 40px 0 !important;
+  }
+}
 </style>
 
 <script>

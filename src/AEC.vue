@@ -7,11 +7,14 @@
         Nous remercions l'excellente équipe de Fakir qui nous a donné l'idée de ce convertisseur avec leur article, <a target="_blank" href="http://www.fakirpresse.info/cice-la-vraie-france-des-assistes">CICE : LA (VRAIE) FRANCE DES ASSISTÉS !</a>
       </p>
       <p>
-        Vous pouvez trouver des informations sur cette <a href="https://www.facebook.com/FrancoisRuffin80/videos/715943555253851/">vidéo explicative</a> et le rapport de <a href="http://www.strategie.gouv.fr/sites/strategie.gouv.fr/files/atoms/files/rapport_cice2016_28095016_ok.pdf">France Stratégie</a>.
+        Vous pouvez trouver des informations sur le rapport de <a href="http://www.strategie.gouv.fr/sites/strategie.gouv.fr/files/atoms/files/rapport_cice2016_28095016_ok.pdf">France Stratégie</a> ou sur les deux vidéos ci-dessous :
       </p>
-      <p>
-        La chaîne YouTube d'Osons Causer a aussi traité ce sujet dans <a href="https://www.youtube.com/watch?v=56hLRvsWbCA">une de leurs vidéos</a>.
-      </p>
+      <div class="c-aec__content__video">
+        <iframe ref="video1" data-src="https://www.youtube.com/embed/TETFhY3eAsE?start=278&end=469" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="c-aec__content__video">
+        <iframe ref="video2" data-src="https://www.youtube.com/embed/56hLRvsWbCA" frameborder="0" allowfullscreen></iframe>
+      </div>
       <p>
         Découvrez aussi les propositions de <a href="https://laec.fr" title="Programme de Mélenchon pour la France Insoumise">l'Avenir en Commun</a>, le programme de la France Insoumise :
       </p>
@@ -48,6 +51,20 @@
     }
   }
 
+  .c-aec__content__video {
+    margin: 20px auto;
+    min-height: 480px;
+    position: relative;
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
   @media (max-width: 767px) {
     .c-aec__title {
       font-size: 20px;
@@ -57,6 +74,19 @@
     .c-aec__content {
       margin-bottom: 80px;
     }
+
+    .c-aec__content__video {
+      min-height: 260px;
+    }
   }
 }
 </style>
+
+<script>
+export default {
+  mounted() {
+    this.$refs.video1.src = this.$refs.video1.dataset.src
+    this.$refs.video2.src = this.$refs.video2.dataset.src
+  }
+}
+</script>
