@@ -14,9 +14,9 @@ Vue.filter('billions', (number) => {
   const w = (number < 10e8) ? 'millions' : 'milliards'
 
   return `${parseFloat(n.toFixed(2)).toLocaleString()} ${w}`
-});
+})
 
-new Vue({
+window.app = new Vue({
   el: '#app',
   render: h => h(App)
 })

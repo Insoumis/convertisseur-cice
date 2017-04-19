@@ -18,7 +18,8 @@
             :max="totalCICE"
             :data-max="job.progress.max"
             :value="job.progress.value"
-            @input="updateValue($event, index)">
+            @input="updateValue($event, index)"
+            @change="updateValue($event, index)">
       </div>
     </div>
 
