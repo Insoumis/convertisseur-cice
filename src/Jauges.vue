@@ -8,7 +8,7 @@
         <c-cice-jauge :joblist=joblist></c-cice-jauge>
       </div>
       <div class="c-jauges__jauge" v-for="(job, index) in joblist">
-          <span class="c-jauges__jauge__title" :title="null">{{ job.plural }}</span>
+          <span class="c-jauges__jauge__title" :title="jobCost(job)">{{ job.plural }}</span>
           <div class="c--space"></div>
           <span class="c-jauges__jauge__jobs">{{ details[index] | bigNumber }} emplois</span>
           <input
@@ -196,6 +196,12 @@ export default {
 
     showAllJobs() {
       this.$emit('showAllJobs')
+    },
+
+    jobCost(job) {
+      const annual = job.costPerMonth * 1.3 * 12;
+
+      return `Coût par mois : ${job.costPerMonth}. Coût annuel (avec charges patronales) : ${annual}`;
     }
   }
 }
