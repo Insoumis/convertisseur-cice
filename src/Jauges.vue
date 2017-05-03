@@ -201,7 +201,7 @@ export default {
     jobCost(job) {
       const annual = job.costPerMonth * 1.3 * 12;
 
-      return `Coût par mois : ${job.costPerMonth}. Coût annuel (avec charges patronales) : ${annual}`;
+      return `Coût par mois : ${job.costPerMonth}. Coût annuel (avec charges patronales) : ${annual}`
     }
   }
 }
