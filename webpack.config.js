@@ -1,10 +1,11 @@
 var path = require('path')
 var webpack = require('webpack')
+const HtmlWebpackPlugin = require("html-webpack-plugin")
 
 module.exports = {
   entry: './src/main.js',
   output: {
-    path: path.resolve(__dirname, './dist'),
+    path: path.resolve(__dirname, '/dist/'),
     publicPath: '/dist/',
     filename: 'build.js'
   },
@@ -13,30 +14,19 @@ module.exports = {
       {
         test: /\.vue$/,
         loader: 'vue-loader',
-        options: {
-          loaders: {
-            // Since sass-loader (weirdly) has SCSS as its default parse mode, we map
-            // the "scss" and "sass" values for the lang attribute to the right configs here.
-            // other preprocessors should work out of the box, no loader config like this necessary.
-            'scss': 'vue-style-loader!css-loader!sass-loader',
-            'sass': 'vue-style-loader!css-loader!sass-loader?indentedSyntax'
-          }
-          // other vue-loader options go here
-        }
       },
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude: /node_modules/
+        //exclude: /node_modules/
+        options: {
+          // Here you should change 'env' to '@babel/preset-env'
+          presets: ['@babel/preset-env']}
       },
       {
-        test: /\.css$/,
-        loader: 'style-loader!css-loader'
-      },
-      {
-        test: /\.(png|jpg|gif|svg)$/,
+        test: /\.(png|jpg|gif|svg|.ico)$/,
         loader: 'file-loader',
-        query: {
+        options: {
           name: '[name].[ext]?[hash]',
           publicPath: process.env.NODE_ENV === 'production' ? './dist/' : '/dist/'
         }
@@ -44,25 +34,36 @@ module.exports = {
       {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
         loader: 'file-loader',
-        query: {
+        options: {
           publicPath: process.env.NODE_ENV === 'production' ? './dist/' : '/dist/'
         }
+      },
+      {
+        test: /\.(css|scss|sass)$/,
+        use: ['style-loader', 'css-loader','sass-loader']
       }
     ]
   },
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.esm.js'
-    }
+    },
+    extensions: ['.js','.jsx', '.css']
   },
   devServer: {
     historyApiFallback: true,
-    noInfo: true
+    hot: true
+    //noInfo: true
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+        template: "./index.html"
+    })
+  ],
   performance: {
     hints: false
   },
-  devtool: '#eval-source-map'
+  devtool: 'eval-source-map'
 }
 
 if (process.env.NODE_ENV === 'production') {
