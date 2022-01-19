@@ -2,7 +2,7 @@
   <div class="c-job-chooser">
     <h2 class="c-job-chooser__title">Choisis un ou des métier(s) !</h2>
     <div class="c-job-chooser__list">
-      <div
+      <div>
         :class="itemClass(job)"
         @click="activeJob(index)"
         v-for="(job, index) in joblist">
@@ -44,7 +44,7 @@
   align-items: center;
   cursor: pointer;
   display: flex;
-  font-family: 'Roboto Slab', sans-serif;
+  font-family: 'Inter', sans-serif;
   height: 40px;
   padding: 0 10px;
 
@@ -58,7 +58,7 @@
 
   &.c-job-chooser__list__item--activated {
     color: #fff;
-    background-color: $flashyBlue;
+    background-color: $blue;
   }
 }
 </style>

@@ -4,27 +4,19 @@
 
     <div class="c-aec__content">
       <p>
-        Nous remercions l'excellente équipe de Fakir qui nous a donné l'idée de ce convertisseur avec leur article, <a target="_blank" href="http://www.fakirpresse.info/cice-la-vraie-france-des-assistes">CICE : LA (VRAIE) FRANCE DES ASSISTÉS !</a>
+        Selon un <a href="https://www.humanite.fr/sondage-exclusif-ce-qui-preoccupe-reellement-les-francais-706890" title="Sondage exclusif : ce qui préoccupe réellement les français">sondage IFOP</a> réalisé pour le journal <i>l'Humanité</i> en mai 2021, <strong>78% des Français·e·s sont favorables au rétablissement de l'ISF</strong>. Cette mesure fait partie du <strong>programme de l'Union Populaire</strong>, représentée par la candidature de Jean-Luc Mélenchon à l'élection présidentielle de 2022.
       </p>
       <p>
-        Vous pouvez trouver des informations sur le rapport de <a href="http://www.strategie.gouv.fr/sites/strategie.gouv.fr/files/atoms/files/rapport_cice2016_28095016_ok.pdf">France Stratégie</a> ou sur les deux vidéos ci-dessous :
-      </p>
-      <div class="c-aec__content__video">
-        <iframe ref="video1" data-src="https://www.youtube.com/embed/TETFhY3eAsE?start=278&end=469" frameborder="0" allowfullscreen></iframe>
-      </div>
-      <div class="c-aec__content__video">
-        <iframe ref="video2" data-src="https://www.youtube.com/embed/56hLRvsWbCA" frameborder="0" allowfullscreen></iframe>
-      </div>
-      <p>
-        Découvrez aussi les propositions de <a href="https://laec.fr" title="Programme de Mélenchon pour la France Insoumise">l'Avenir en Commun</a>, le programme de la France Insoumise :
+        Découvrez les propositions de <a href="https://laec.fr" title="Programme de Mélenchon pour la France Insoumise">l'Avenir en Commun</a>, <strong>le programme de l'Union Populaire</strong>, pour opérer la <strong>révolution fiscale</strong>&nbsp;:
       </p>
       <ul>
-        <li><strong>Suppression du CICE</strong> et des autres niches fiscales.</li>
-        <li>Recrutement de <strong>fonctionnaires</strong>.</li>
-        <li>Plan de relance de 100 milliards pour la <strong>planification écologique</strong> et l'<strong>économie de la mer</strong>.</li>
-        <li>Réforme de l'impôt sur les sociétés pour que les <strong>PME paient moins</strong> et que le <strong>CAC40 n'y échappe plus</strong>.</li>
-        <li>Favorisation de l'<strong>investissement</strong> plutôt que les dividendes aux actionnaires.</li>
-        <li>Instauration d'un <strong>fonds de solidarité inter-entreprises</strong> au profit des PME et des sous-traitants.</li>
+        <li>Rendre <strong>l'impôt sur le revenu plus progressif</strong> avec un barème à 14 tranches contre 5 aujourd'hui.</li>
+        <li><strong>Rétablir et renforcer l'ISF</strong>, en incluant un volet climatique visant à taxer les gros pollueurs.</li>
+        <li><strong>Supprimer la flat tax</strong> et imposer les revenus du capital comme ceux du travail.</li>
+        <li>Rendre la <strong>CSG progressive</strong> avec 14 tranches. </li>
+        <li>Augmenter les droits de succession <strong>sur les plus hauts patrimoines</strong> et créer un <strong>héritage maximal de 12 millions d'euros</strong> (soit 100 fois le patrimoine net médian).</li>
+        <li><strong>Réduire la TVA sur les produits de première nécessité</strong> et réinstaurer une <strong>"TVA grand luxe"</strong> pour la financer.</li>
+        <li>Et bien plus encore à découvrir dans <a href="https://laec.fr" title="Programme de Mélenchon pour la France Insoumise">l'Avenir en Commun</a> !</li>
       </ul>
     </div>
   </div>
@@ -35,7 +27,7 @@
 
 .c-aec {
   h2 {
-    color: $flashyBlue;
+    color: $blue;
     margin: 80px 0 60px;
     text-align: center;
   }
@@ -45,9 +37,10 @@
     margin: 0 auto 150px;
     max-width: 700px;
     padding: 0 15px;
+    text-align: justify;
 
     a {
-      color: $flashyBlue;
+      color: $blue;
     }
   }
 

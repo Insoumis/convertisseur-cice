@@ -34,7 +34,7 @@
 
   .c-job-result__title-wrapper__title__result {
     background: #fff;
-    border: 1px solid darken($flashyBlue, 2%);
+    border: 1px solid darken($blue, 2%);
     border-radius: 8px;
     box-shadow: 0 2px 12px rgba(0,0,0,.12);
     color: $red;
@@ -72,7 +72,8 @@ export default {
   data() {
     return {
       cice,
-      details: [],
+      details_opex: [],
+      details_capex: [],
       jobs: 0
     }
   },
@@ -89,17 +90,22 @@ export default {
 
   methods: {
     update(joblist) {
-      this.joblist = this.joblist
+      this.opex_list = this.opex_list
+      this.capex_list = this.capex_list
 
-      this.details = this.joblist.map(job => {
+      this.details_opex = this.opex_list.map(job => {
         return {
           jobs: Math.floor(job.progress.value / (job.costPerMonth * 1.3 * 12))
         }
       })
 
-      this.jobs = this.details
-        .map(job => job.jobs)
-        .reduce((a, b) => a + b, 0)
+      this.details_capex = this.capex_list.map(job => {
+        return {
+          jobs: Math.floor(job.progress.value / (job.costPerMonth * 1.3 * 12))
+        }
+      })
+
+      this.jobs = this.details_opex.map(job => job.jobs).reduce((a, b) => a + b, 0) + this.details_capex.map(job => job.jobs).reduce((a, b) => a + b, 0)
     }
   }
 }

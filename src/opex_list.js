@@ -1,42 +1,42 @@
-export const totalCICE = 2.2 * 10e9
+import { totalISF } from './dataISF.js'
 
 export const smicMonth = 1568.27
 
 const jobs = [
   {
     name: 'Infirmier',
-    plural: 'Infirmiers.ères',
-    costPerMonth: 2100,
+    plural: 'Infirmierszzzz',
+    costPerYear: 10,
     active: true,
-    progress: { min: 0, max: totalCICE, value: 0 }
+    progress: { min: 0, max: totalISF, value: 0 }
   },
   {
     name: 'Instituteur',
     plural: 'Instituteurs.trices',
-    costPerMonth: 2150,
+    costPerYear: 10,
     active: true,
-    progress: { min: 0, max: totalCICE, value: 0 }
+    progress: { min: 0, max: totalISF, value: 0 }
   },
   {
     name: 'Animateur périscolaire',
     plural: 'Animateurs.trices périscolaires',
-    costPerMonth: 820,
+    costPerYear: 10,
     active: true,
-    progress: { min: 0, max: totalCICE, value: 0 }
+    progress: { min: 0, max: totalISF, value: 0 }
   },
   {
     name: 'Policier municipal',
     plural: 'Policiers.ères municipaux.ales',
-    costPerMonth: 1800,
+    costPerYear: 10,
     active: true,
-    progress: { min: 0, max: totalCICE, value: 0 }
+    progress: { min: 0, max: totalISF, value: 0 }
   },
   {
     name: 'Pompier',
     plural: 'Pompiers.ères',
-    costPerMonth: 1800,
+    costPerYear: 10,
     active: true,
-    progress: { min: 0, max: totalCICE, value: 0 }
+    progress: { min: 0, max: totalISF, value: 0 }
   }
 ]
 

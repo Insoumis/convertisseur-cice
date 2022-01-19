@@ -3,12 +3,12 @@
     <c-header></c-header>
     <c-intro></c-intro>
     <c-jauges
-      :joblist="joblist"
+      :opex_list="opex_list"
+      :capex_list="capex_list"
       ref="jauges"
-      @updateJobs="triggerUpdate"
+      @updateJobs_opex="triggerUpdate_opex"
+      @updateJobs_capex="triggerUpdate_capex"
       @showAllJobs="showAllJobs"></c-jauges>
-    <c-cice-result></c-cice-result>
-    <c-cice-cost></c-cice-cost>
     <c-aec></c-aec>
     <c-sources></c-sources>
   </div>
@@ -29,13 +29,13 @@ html {
 body {
   color: $main;
   display: flex;
-  font-family: Roboto, sans-serif;
+  font-family: Inter, sans-serif;
   min-height: 100%;
   margin: 0;
 }
 
 h1, h2, h3, h5 {
-  font-family: Montserrat, sans-serif;
+  font-family: "Inter", sans-serif;
   text-transform: uppercase;
   font-weight: 600;
   padding: 0 15px;
@@ -64,15 +64,13 @@ h1, h2, h3, h5 {
 </style>
 
 <script>
-import joblist from './joblist'
+import opex_list from './opex_list'
+import capex_list from './capex_list'
+
 
 import CHeader from './Header.vue'
-import CCICEJauge from './CICEJauge.vue'
 import CIntro from './Intro.vue'
-import CJobChooser from './JobChooser.vue'
 import CJauges from './Jauges.vue'
-import CCICEResult from './CICEResult.vue'
-import CCICECost from './CICECost.vue'
 import CAEC from './AEC.vue'
 import CSources from './Sources.vue'
 
@@ -81,19 +79,16 @@ export default {
 
   components: {
     CHeader,
-    'c-cice-jauge': CCICEJauge,
     CIntro,
-    CJobChooser,
     CJauges,
-    'c-cice-result': CCICEResult,
-    'c-cice-cost': CCICECost,
     'c-aec': CAEC,
     CSources
   },
 
   data() {
     return {
-      joblist,
+      opex_list,
+      capex_list,
       allJobs: false
     }
   },
@@ -105,24 +100,38 @@ export default {
   },
 
   mounted() {
-    this.triggerUpdate()
+    this.triggerUpdate_capex()
+    this.triggerUpdate_opex()
   },
 
   methods: {
     showAllJobs() {
       this.allJobs = true
 
-      this.joblist.forEach((job) => {
+      this.opex_list.forEach((job) => {
         job.active = true
       })
 
-      this.triggerUpdate()
+      this.capex_list.forEach((job) => {
+        job.active = true
+      })
+
+      this.triggerUpdate_opex()
+      this.triggerUpdate_capex()
     },
 
-    triggerUpdate() {
-      this.$refs.jauges.$refs.result.update(this.joblist)
-      this.$refs.jauges.update(this.joblist)
+    triggerUpdate_opex() {
+      //this.$refs.jauges.$refs.result.update(this.opex_list,this.capex_list)
+      //this.$refs.jauges.$refs.result.update(this.opex_list,this.capex_list)
+      //this.$refs.jauges.update_opex(this.opex_list)
+    },
+
+    triggerUpdate_capex() {
+      //this.$refs.jauges.$refs.result.update(this.opex_list,this.capex_list)
+      //this.$refs.jauges.$refs.result.update(this.opex_list,this.capex_list)
+      //this.$refs.jauges.update_capex(this.capex_list)
     }
+
   }
 }
 </script>

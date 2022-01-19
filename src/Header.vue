@@ -2,9 +2,8 @@
   <header class="c-header">
     <a href="http://discord-insoumis.fr" class="c-header__logo" target="_blank">Discord Insoumis</a>
     <nav class="c-header__nav">
-      <a target="_blank" href="https://lafranceinsoumise.fr/" title="Site de la France Insoumise">lafranceinsoumise.fr</a>
-      <a target="_blank" href="https://laec.fr/" title="Programme de Mélenchon pour la France Insoumise">Consultez le programme</a>
-      <a target="_blank" href="https://impots.jlm2017.fr/" title="Simulateur d'impôts de la campagne de la France Insoumise">Simulateur d'impôts</a>
+      <a target="_blank" href="https://melenchon2022.fr/" title="Site de l'Union Populaire">melenchon2022.fr</a>
+      <a target="_blank" href="https://laec.fr/" title="Programme de Mélenchon pour l'Union Populaire">Consultez le programme !</a>
     </nav>
   </header>
 </template>
@@ -35,8 +34,8 @@
 
     > a {
       color: #fff;
-      font-family: Montserrat, serif;
-      font-size: 14px;
+      font-family: Inter, sans-serif;
+      font-size: 18px;
       line-height: 36px;
       margin: 0 6px;
       text-decoration: none;

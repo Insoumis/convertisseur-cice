@@ -1,29 +1,59 @@
 <template>
   <div class="c-jauges">
-    <h2 class="c-jauges__title">Réinvestissez les fonds du CICE dans les secteurs publics.</h2>
-    <div class="c-jauges__table">
-      <div class="c-jauges__table__header">
-        <h3 class="c-jauges__table__header__title">Métiers</h3>
-        <div class="c--space"></div>
-        <c-cice-jauge :joblist=joblist></c-cice-jauge>
-      </div>
-      <div class="c-jauges__jauge" v-for="(job, index) in joblist">
-          <span class="c-jauges__jauge__title" :title="jobCost(job)">{{ job.plural }}</span>
+    <h2 class="c-jauges__title">Si l'ISF n'avait pas été supprimé, vous auriez pu</h2>
+
+    <div class="c-jauges__row">
+
+      <div class="c-jauges__table__opex">
+        <div class="c-jauges__table__header">
+          <h3 class="c-jauges__table__header__title">Financer pendant 5 ans</h3>
           <div class="c--space"></div>
-          <span class="c-jauges__jauge__jobs">{{ details[index] | bigNumber }} emplois</span>
-          <input
-            class="c-jauges__jauge__input"
-            type="range"
-            min="0"
-            :max="totalCICE"
-            :data-max="job.progress.max"
-            :value="job.progress.value"
-            @input="updateValue($event, index)"
-            @change="updateValue($event, index)">
+          <c-cice-jauge-opex :opex_list=opex_list></c-cice-jauge-opex>
+        </div>
+        <div class="c-jauges__jauge" v-for="(job, index) in opex_list">
+            <span class="c-jauges__jauge__title" :title="jobCost(job)">{{ job.plural }}</span>
+            <div class="c--space"></div>
+            <span class="c-jauges__jauge__jobs">{{ details_opex[index] | bigNumber }} emplois</span>
+            <input
+              class="c-jauges__jauge__input"
+              type="range"
+              min="0"
+              :max="totalISF"
+              :data-max="job.progress.max"
+              :value="job.progress.value"
+              @input="updateValue_opex($event, index)"
+              @change="updateValue_opex($event, index)">
+        </div>
+        <div> Test : {{ details_opex }}</div>
       </div>
+
+      <div class="c-jauges__table__capex">
+        <div class="c-jauges__table__header">
+          <h3 class="c-jauges__table__header__title">Construire</h3>
+          <div class="c--space"></div>
+          <c-cice-jauge-capex :capex_list=capex_list></c-cice-jauge-capex>
+        </div>
+        <div class="c-jauges__jauge" v-for="(job, index) in capex_list">
+            <span class="c-jauges__jauge__title" :title="jobCost(job)">{{ job.plural }}</span>
+            <div class="c--space"></div>
+            <span class="c-jauges__jauge__jobs">{{ details_capex[index] | bigNumber }} emplois</span>
+            <input
+              class="c-jauges__jauge__input"
+              type="range"
+              min="0"
+              :max="totalISF"
+              :data-max="job.progress.max"
+              :value="job.progress.value"
+              @input="updateValue_capex($event, index)"
+              @change="updateValue_capex($event, index)">
+        </div>
+      </div>
+
     </div>
 
-    <c-job-result :joblist="joblist" ref="result"></c-job-result>
+    <h2 class="c-jauges__title">Montant à attribuer : {{ remainingISF | billions }} / {{remainingISF|bigNumber}}</h2>
+
+    <c-job-result :opex_list="opex_list" ref="result"></c-job-result>
   </div>
 </template>
 
@@ -31,8 +61,8 @@
 @import './theme';
 @import './range';
 
-.c-jauges {
-  background: $flashyBlue;
+.c-jauges{
+  background: $blue;
   box-shadow: 0 5px 10px transparentize(#000, 0.8);
   height: auto;
 }
@@ -41,17 +71,37 @@
   color: $white;
   font-size: 26px;
   font-weight: 500;
-  margin: 70px 0 50px;
+  margin: 50px 0 50px;
   text-align: center;
 }
 
-.c-jauges__table {
+.c-jauges__table__opex {
   background: $white;
-  border: 1px solid darken($flashyBlue, 2%);
+  border: 1px solid darken($blue, 2%);
   box-shadow: 0 2px 12px rgba(0,0,0,.12);
   border-radius: 8px;
-  margin: 0 auto;
+  margin: auto auto auto 0;
   max-width: 720px;
+  float:left;
+  width: 50%;
+}
+
+.c-jauges__table__capex {
+  background: $white;
+  border: 1px solid darken($blue, 2%);
+  box-shadow: 0 2px 12px rgba(0,0,0,.12);
+  border-radius: 8px;
+  margin: auto 1.5% auto auto;
+  max-width: 720px;
+  float:right;
+  width: 50%;
+  align-self: stretch;
+}
+
+.c-jauges__row:after {
+  content: "";
+  display:table;
+  clear: both;
 }
 
 .c-jauges__table__header {
@@ -137,43 +187,59 @@
 </style>
 
 <script>
-import { totalCICE } from './joblist'
+import { totalISF, dureeMandat } from './dataISF'
 
-import CICEJauge from './CICEJauge.vue'
+import CICEJauge1 from './CICEJauge-opex.vue'
+import CICEJauge2 from './CICEJauge-capex.vue'
 import CJobResult from './JobResult.vue'
 
+
 export default {
-  props: ['joblist'],
+  props: ['opex_list','capex_list','remainingISF'],
 
   components: {
-    'c-cice-jauge': CICEJauge,
+    'c-cice-jauge-opex': CICEJauge1,
+    'c-cice-jauge-capex': CICEJauge2,
     CJobResult
   },
 
   data() {
     return {
-      totalCICE,
-      details: [0, 0, 0, 0, 0]
+      totalISF,
+      details_opex: [0, 0, 0, 0, 0],
+      details_capex: [0, 0, 0, 0, 0],
     }
   },
 
+  computed: {
+    remainingISF() {
+      return totalISF - this.opex_list.filter(job => job.active).map(job => job.progress.value).reduce((a, b) => a + b, 0)- this.capex_list.filter(job => job.active).map(job => job.progress.value).reduce((a, b) => a + b, 0)
+    },
+  },
   methods: {
-    update(joblist) {
-      this.joblist = joblist
+    update_opex(opex_list) {
+      this.opex_list = opex_list
 
-      this.details = this.joblist.map(job => {
-        return Math.floor(job.progress.value / (job.costPerMonth * 1.3 * 12))
+      this.details_opex = this.opex_list.map(job => {
+        return Math.floor(job.progress.value / (job.costPerYear*dureeMandat))
       })
 
-      this.refreshProgressbars()
+      this.refreshProgressbars_opex()
     },
 
-    refreshProgressbars() {
-      this.joblist.forEach((job, index) => {
-        const jobMax = totalCICE - this.joblist
-          .filter((_, j) => j !== index)
-          .map(job => job.progress.value)
-          .reduce((a, b) => a + b, 0)
+    update_capex(capex_list) {
+      this.capex_list = capex_list
+
+      this.details_capex = this.capex_list.map(job => {
+        return Math.floor(job.progress.value / (job.costPerMonth * 1.3 * 12))
+      })
+      
+      this.refreshProgressbars_capex()
+    },
+
+    refreshProgressbars_opex() {
+      this.opex_list.forEach((job, index) => {
+        const jobMax = totalISF - this.opex_list.filter((_, j) => j !== index).map(job => job.progress.value).reduce((a, b) => a + b, 0) - this.capex_list.map(job => job.progress.value).reduce((a, b) => a + b, 0)
 
         job.progress.max = jobMax
 
@@ -181,17 +247,46 @@ export default {
       })
     },
 
-    updateValue($event, updatedIndex) {
+    refreshProgressbars_capex() {
+      this.capex_list.forEach((job, index) => {
+        const jobMax = totalISF - this.capex_list.filter((_, j) => j !== index).map(job => job.progress.value).reduce((a, b) => a + b, 0) - this.opex_list.map(job => job.progress.value).reduce((a, b) => a + b, 0)
+
+        job.progress.max = jobMax
+
+        return job
+      })
+    },
+
+    updateValue_opex($event, updatedIndex) {
       let value = parseInt($event.target.value, 10)
-      value = Math.min(value, this.joblist[updatedIndex].progress.max)
+      value = Math.min(value, this.opex_list[updatedIndex].progress.max)
 
       $event.target.value = value
 
-      this.joblist[updatedIndex].progress.value = value
+      this.opex_list[updatedIndex].progress.value = value
+      this.details_opex[updatedIndex] = Math.floor(value/(this.opex_list[updatedIndex].costPerYear*dureeMandat))
 
-      this.refreshProgressbars()
+      this.refreshProgressbars_opex()
 
-      this.$emit('updateJobs')
+      this.$emit('updateJobs_opex')
+    },
+
+    updateValue_capex($event, updatedIndex) {
+      let value = parseInt($event.target.value, 10)
+      value = Math.min(value, this.capex_list[updatedIndex].progress.max)
+
+      $event.target.value = value
+
+      this.capex_list[updatedIndex].progress.value = value
+      this.details_capex[updatedIndex] = Math.floor(value/(this.capex_list[updatedIndex].cost))
+
+      this.refreshProgressbars_capex()
+
+      this.$emit('updateJobs_capex')
+    },
+
+    updateTotalISF() {
+      this.remainingISF = totalISF - this.opex_list.filter(job => job.active).map(job => job.progress.value).reduce((a, b) => a + b, 0)- this.capex_list.filter(job => job.active).map(job => job.progress.value).reduce((a, b) => a + b, 0)
     },
 
     showAllJobs() {
